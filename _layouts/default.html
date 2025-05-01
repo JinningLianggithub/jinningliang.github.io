@@ -6,6 +6,7 @@
     <title>{{ page.title | default: site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="sidebar">
@@ -24,10 +25,18 @@
                 </ul>
             </nav>
             <div class="contact-info">
-                <a href="https://orcid.org/0000-0001-8405-2921" target="_blank">ORCID</a>
-                <a href="https://github.com/JinningLianggithub" target="_blank">GitHub</a>
-                <a href="https://scholar.google.com/citations?user=1prsaO4AAAAJ&hl=en" target="_blank">Google Scholar</a>
-                <a href="mailto:jinningliangastro@gmail.com">Email</a>
+                <a href="https://orcid.org/0000-0001-8405-2921" target="_blank" class="icon-link">
+                    <i class="fab fa-orcid" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/JinningLianggithub" target="_blank" class="icon-link">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://scholar.google.com/citations?user=1prsaO4AAAAJ&hl=en" target="_blank" class="icon-link">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:jinningliangastro@gmail.com" class="icon-link">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </div>
