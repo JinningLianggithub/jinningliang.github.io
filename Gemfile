@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.3"
+gem "minima", "~> 2.5"
+gem "jekyll-feed", "~> 0.15"
+gem "jekyll-seo-tag", "~> 2.8"
+gem "jekyll-sitemap", "~> 1.4"
+gem "jekyll-paginate", "~> 1.1"
+gem "jemoji", "~> 0.12"
+gem "jekyll-theme-primer", "~> 0.6"

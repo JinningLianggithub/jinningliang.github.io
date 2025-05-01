@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="profile">
+        <h1>{{ site.author.name }}</h1>
+        <p>{{ site.author.affiliation }}</p>
+      </div>
+      
+<nav>
+  <ul>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/research.html">Research</a></li>
+    <li><a href="/publications.html">Publications</a></li>
+    <li><a href="/code.html">Code</a></li>
+    <li><a href="/assets/files/CV.Liang.pdf" target="_blank">CV</a></li>
+  </ul>
+</nav>
+
+      <div class="social-links">
+        <a href="https://orcid.org/{{ site.social.orcid }}" target="_blank" class="social-icon">
+          <i class="fab fa-orcid"></i>
+        </a>
+        <a href="{{ site.social.github }}" target="_blank" class="social-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="{{ site.social.google_scholar }}" target="_blank" class="social-icon">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="mailto:{{ site.social.email }}" class="social-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <main class="content">
+      {{ content }}
+    </main>
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  </body>
+</html>
