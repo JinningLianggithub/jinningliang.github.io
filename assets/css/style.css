@@ -96,31 +96,40 @@ body {
 .content {
     flex: 1;
     padding: 2rem;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+    background: url('/assets/images/home.png') no-repeat center center;
+    background-size: cover;
 }
 
 .animated-text {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 1.5s ease-out;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 2s ease-in-out;
 }
 
 .animated-text.visible {
     opacity: 1;
-    transform: translateY(0);
+    color: #fff;
 }
 
 .animated-text p {
-    font-size: 3rem;
+    font-size: 10rem;
     font-weight: 700;
     text-align: center;
-    color: #1a1a1a;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Contact info */
