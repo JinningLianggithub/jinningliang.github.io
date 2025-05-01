@@ -200,3 +200,21 @@ main a:hover {
 main a:visited {
   color: #66ccff;       /* keep the same color as unvisited */
 }
+
+main h1 {
+  font-size: 2.5rem;     /* Larger size */
+  margin-bottom: 1rem;   /* Space below the title */
+  font-weight: bold;     /* Optional: make it bolder */
+}
+
+main h2 {
+  font-size: 2rem;     /* Larger size */
+  margin-bottom: 1rem;   /* Space below the title */
+  font-weight: bold;     /* Optional: make it bolder */
+}
+
+main h3 {
+  font-size: 1.5rem;     /* Larger size */
+  margin-bottom: 1rem;   /* Space below the title */
+  font-weight: bold;     /* Optional: make it bolder */
+}
