@@ -112,14 +112,11 @@ body {
     width: calc(100% - 250px);
     overflow-y: auto;
     line-height: 1.5;
-}
-
-/* Add margin for pages other than about */
-:not(.about-page) .content {
     margin-top: 15%;
     margin-bottom: 25%;
     max-width: 70%;
 }
+
 
 
 .animated-text {
