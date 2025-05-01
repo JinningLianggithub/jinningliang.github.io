@@ -1,165 +1,27 @@
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
-    font-family: 'Georgia', serif;
-    line-height: 1.8;
-    color: #000;
-    background-color: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
-
-/* Sidebar */
 .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 100vh;
-    background: url('/assets/images/text.png') no-repeat center center;
-    background-size: cover;
-    padding: 2rem;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  color: white;
+  padding: 20px;
 }
-
-.profile {
-    margin-bottom: 3rem;
+.sidebar-content a {
+  color: white;
+  text-decoration: none;
 }
-
-.profile h1 {
-    font-size: 1.8rem;
-    color: #fff;
-    margin-bottom: 0.5rem;
+.sidebar-content a:hover {
+  text-decoration: underline;
 }
-
-.profile p {
-    color: #fff;
-    line-height: 1.4;
-}
-
-.vertical-nav ul {
-    list-style: none;
-}
-
-.vertical-nav li {
-    margin-bottom: 1rem;
-}
-
-.vertical-nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.1rem;
-    padding: 0.5rem 0;
-    display: block;
-    transition: color 0.3s ease;
-}
-
-.vertical-nav a:hover, .vertical-nav a.active {
-    color: #000;
-}
-
-.social-links {
-    margin-top: 3rem;
-}
-
-.social-link {
-    display: block;
-    margin-bottom: 1rem;
-    color: #000;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.social-link i {
-    margin-right: 0.5rem;
-}
-
-.social-link:hover {
-    color: #000;
-}
-
-/* Main Content */
-.content {
-    margin-left: 250px;
-    padding: 2rem;
-    max-width: 1000px;
-    margin-right: auto;
-    background-color: #fff;
-}
-
-section {
-    margin-bottom: 4rem;
-}
-
-section h2 {
-    color: #000;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
-    .sidebar {
-        width: 200px;
-    }
-    
-    .content {
-        margin-left: 200px;
-    }
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: static;
-        box-shadow: none;
-    }
-    
-    .content {
-        margin-left: 0;
-        padding: 1rem;
-    }
-    
-    .vertical-nav {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
-    }
-    
-    .vertical-nav li {
-        margin: 0 1rem;
-    }
-}
-
-
-/* Force left-pane links to be white and clean */
-.left-pane nav ul {
-    list-style: none;
-    padding-left: 0;
-}
-.left-pane nav ul li {
-    margin: 0.5em 0;
-}
-.left-pane nav ul li a {
-    color: white !important;
-    text-decoration: none !important;
-}
-.left-pane nav ul li a:visited {
-    color: white !important;
-}
-.left-pane nav ul li a:hover {
-    color: #dddddd !important;
-}
-
-/* Make icons white */
-.left-pane a svg {
-    fill: white !important;
-    width: 1.5em;
-    height: 1.5em;
+.main-content {
+  margin-left: 270px;
+  padding: 20px;
 }

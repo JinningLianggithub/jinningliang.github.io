@@ -1,46 +1,13 @@
-title: Jinning Liang
-email: your.email@example.com
-baseurl: ""
-url: "https://jinningliang.com"
 
-# Build settings
+title: "Jinning Liang"
+description: "Personal website"
 theme: minima
-gem: jekyll-theme-minima
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
-  - LICENSE
-  - _config.yml
-  - _site/
+markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
-
-# Site settings
-author:
-  name: Jinning Liang
-  affiliation: "PhD Student at Peking University"
-
-# Social links
-social:
-  orcid: "0000-0001-8405-2921"
-  github: "https://github.com/JinningLianggithub"
-  google_scholar: "https://scholar.google.com/citations?user=1prsaO4AAAAJ&hl=en"
-  email: "jinningliangastro@gmail.com"
-
-# Navigation
-nav:
-  - title: About
-    url: /about/
-  - title: Research
-    url: /research/
-  - title: Publications
-    url: /publications/
-  - title: CV
-    url: /cv/
-  - title: Code
-    url: /code/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
