@@ -106,16 +106,21 @@ body {
 .content {
     flex: 1;
     padding: 0 8rem;
-    max-width: 70%;
     margin: 6 auto;
     background-color: white;
     margin-left: 250px;
     width: calc(100% - 250px);
     overflow-y: auto;
-    margin-top: 15%;
-    margin-bottom: 25%;
     line-height: 1.5;
 }
+
+/* Add margin for pages other than about */
+:not(.about-page) .content {
+    margin-top: 15%;
+    margin-bottom: 25%;
+    max-width: 70%;
+}
+
 
 .animated-text {
     display: none;

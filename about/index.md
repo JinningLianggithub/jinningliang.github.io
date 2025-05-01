@@ -2,11 +2,11 @@
 layout: default
 title: About
 ---
-
-<div class="about-background">
-    <img src="/assets/images/about-bg.jpg" alt="About background" class="about-bg-image">
+<div class="about-page">
+	<div class="about-background">
+    		<img src="/assets/images/about-bg.jpg" alt="About background" class="about-bg-image">
+	</div>
 </div>
-
 
 
 # About
