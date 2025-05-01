@@ -13,7 +13,10 @@
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+    aspect-ratio: 1 / 1;       /* <-- force square */
+    width: 100%;               /* full width in the grid column */
 }
+
 
 .research-block:hover {
     transform: translateY(-5px);
