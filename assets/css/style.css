@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    font-size: 1.1rem;
 }
 
 /* Sidebar styles */
@@ -104,9 +105,9 @@ body {
 /* Content area */
 .content {
     flex: 1;
-    padding: 0 2rem;
-    max-width: 80%;
-    margin: 4rem auto;
+    padding: 0 8rem;
+    max-width: 70%;
+    margin: 6 auto;
     background-color: white;
     margin-left: 250px;
     width: calc(100% - 250px);
@@ -118,7 +119,7 @@ body {
 }
 
 .content p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
     text-align: left;
     color: #333;
