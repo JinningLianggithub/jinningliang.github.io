@@ -1,8 +1,12 @@
 .home-content {
     position: relative;
     min-height: 100vh;
-    background: url('../images/home.png') no-repeat center center;
-    background-size: cover;
+    background: url('../images/home.png') no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    width: calc(100% - 250px);
+    left: 250px;
+    position: fixed;
 }
 
 .home-content .animated-text {
@@ -13,6 +17,11 @@
     left: 50%;
     transform: translateX(-50%);
     transition: all 2s ease-in-out;
+}
+
+.home-content .animated-text.visible {
+    opacity: 1;
+    color: #fff;
 }
 
 .home-content .animated-text.visible {
