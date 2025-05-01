@@ -1,12 +1,15 @@
 .home-content {
-    position: relative;
-    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 250px;
+    width: calc(100% - 250px);
     background: url('../images/home.png') no-repeat;
     background-size: 100% 100%;
     background-position: center;
-    width: calc(100% - 250px);
-    left: 250px;
-    position: fixed;
+    padding: 0;
+    margin: 0;
 }
 
 .home-content .animated-text {
@@ -17,6 +20,9 @@
     left: 50%;
     transform: translateX(-50%);
     transition: all 2s ease-in-out;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
 }
 
 .home-content .animated-text.visible {
