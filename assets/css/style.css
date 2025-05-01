@@ -113,6 +113,7 @@ body {
     width: calc(100% - 250px);
     overflow-y: auto;
     margin-top: 15%;
+    margin-bottom: 15%;
     line-height: 1.5;
 }
 
