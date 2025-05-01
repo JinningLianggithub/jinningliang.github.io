@@ -14,7 +14,8 @@ body {
 /* Sidebar styles */
 .sidebar {
     width: 250px;
-    background-color: #1a1a1a;
+    background: url('/assets/images/test.png') no-repeat center center;
+    background-size: cover;
     color: white;
     padding: 2rem;
     display: flex;
