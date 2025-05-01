@@ -184,3 +184,19 @@ body {
         padding: 1rem;
     }
 }
+
+
+main a {
+  color: #66ccff;       /* light blue */
+  text-decoration: underline;  /* optional */
+}
+
+/* When user hovers over the link */
+main a:hover {
+  color: #99ddff;       /* even lighter blue on hover (optional) */
+}
+
+/* When link is visited */
+main a:visited {
+  color: #66ccff;       /* keep the same color as unvisited */
+}
