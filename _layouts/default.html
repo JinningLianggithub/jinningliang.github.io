@@ -1,37 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ site.seo }}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-  </head>
-  <body>
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
     <div class="sidebar">
-      <div class="sidebar-content">
-        <h1>Jinning Liang</h1>
-        <p>Kavli Institute for Astronomy and Astrophysics<br>Peking University</p>
-        <nav>
-          <ul>
-            <li><a href="{{ "/pages/about.html" | relative_url }}">About</a></li>
-            <li><a href="{{ "/pages/research.html" | relative_url }}">Research</a></li>
-            <li><a href="{{ "/pages/cv.html" | relative_url }}">CV</a></li>
-            <li><a href="{{ "/pages/publication.html" | relative_url }}">Publication</a></li>
-            <li><a href="{{ "/pages/code.html" | relative_url }}">Code</a></li>
-          </ul>
-        </nav>
-        <div class="contact">
-          <a href="https://orcid.org/0000-0001-8405-2921" target="_blank">ORCID</a><br>
-          <a href="https://github.com/JinningLianggithub" target="_blank">GitHub</a><br>
-          <a href="https://scholar.google.com/citations?user=1prsaO4AAAAJ&hl=en" target="_blank">Google Scholar</a><br>
-          <a href="mailto:jinningliangastro@gmail.com">Email</a>
+        <div class="sidebar-content">
+            <h1 class="name">Jinning Liang</h1>
+            <p class="affiliation">PhD Student at Kavli Institute for Astronomy and Astrophysics, Peking University</p>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+                    <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
+                    <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>
+                    <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+                    <li><a href="{{ '/code/' | relative_url }}">Code</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <a href="https://orcid.org/0000-0001-8405-2921" target="_blank">ORCID</a>
+                <a href="https://github.com/JinningLianggithub" target="_blank">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=1prsaO4AAAAJ&hl=en" target="_blank">Google Scholar</a>
+                <a href="mailto:jinningliangastro@gmail.com">Email</a>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="main-content">
-      {{ content }}
-    </div>
-  </body>
+    <main class="content">
+        {{ content }}
+    </main>
+</body>
 </html>
