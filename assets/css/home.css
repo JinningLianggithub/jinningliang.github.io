@@ -9,9 +9,9 @@
     opacity: 0;
     color: #000;
     position: absolute;
-    top: 50%;
+    bottom: 2rem;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     transition: all 2s ease-in-out;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .home-content .animated-text p {
-    font-size: 10rem;
+    font-size: 3rem;
     font-weight: 700;
     text-align: center;
     letter-spacing: 2px;
