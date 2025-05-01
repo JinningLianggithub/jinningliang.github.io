@@ -3,12 +3,12 @@ layout: default
 title: Publications
 ---
 
-### Publications
+# Publications
 
 My published papers can be seen in [ORCID](https://orcid.org/0000-0001-8405-2921), [Google Scholar](https://scholar.google.com/citations?user=1prsaO4AAAAJ&hl=zh-CN), or [ADS library](https://ui.adsabs.harvard.edu/public-libraries/zs0p82o5RdGYGU6_i5PWjQ) 
 
 
-### First author papers
+# First author papers
 
 <ol> 
 <li>F. Jiang (co-first author), <b>Jinning Liang</b> (co-first author) et al. 2025, <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250401070J/abstract">Submitted</a>: Formation and Environmental Context of Giant Bulgeless Disk Galaxies in the Early Universe: Insights from Cosmological Simulations</li>
@@ -24,7 +24,7 @@ running threshold for thin discs and size predictors from the dark sector</li>
 
 </ol>
 
-### Co-authored papers
+# Co-authored papers
 
 <ol>
 <li>Zou. S, Simcoe. R.A., Petitjean. P, Péroux. C, Champagne. J, Wang. F, <b>Jinning Liang</b> et al.,  et al. 2025, <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250214705Z/abstract">Submitted</a>: Disturbed cold gas in galaxy and structure formation</li>
