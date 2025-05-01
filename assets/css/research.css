@@ -17,6 +17,10 @@
     width: 100%;               /* full width in the grid column */
 }
 
+.research-block {
+    padding: 0;
+    margin: 0;
+}
 
 .research-block:hover {
     transform: translateY(-5px);
@@ -27,6 +31,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    padding: 0;
+    margin: 0;
 }
 
 .research-block-content {
