@@ -98,6 +98,29 @@ body {
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1.5s ease-out;
+}
+
+.animated-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animated-text p {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1a1a1a;
+    letter-spacing: 1px;
 }
 
 /* Contact info */
