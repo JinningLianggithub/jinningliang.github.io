@@ -112,6 +112,8 @@ body {
     margin-left: 250px;
     width: calc(100% - 250px);
     overflow-y: auto;
+    margin-top: 15%;
+    line-height: 1.5;
 }
 
 .animated-text {
