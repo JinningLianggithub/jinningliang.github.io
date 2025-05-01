@@ -3,6 +3,10 @@ layout: default
 title: About
 ---
 
+<div style="text-align: center; margin-bottom: 2rem;">
+  <img src="/assets/images/profile.jpg" alt="My photo" style="width: 200px; border-radius: 10px;">
+</div>
+
 # About
 
 My name is Jinning Liang, and I am a first-year PhD student at the Kavli Institute for Astronomy and Astrophysics, Peking University, China. Before this, I began a PhD program at Durham University, UK, funded by the STFC, and later completed a master’s degree there. Prior to that, I obtained my bachelor's degree from Wuhan University, China.
