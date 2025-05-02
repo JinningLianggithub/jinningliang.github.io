@@ -1,6 +1,6 @@
-.page-container {
-  max-width: none !important;
-  width: 100%;
+body:has(.research-page) .content {
+    max-width: none !important;
+    width: 100%;
 }
 
 .research-grid {
