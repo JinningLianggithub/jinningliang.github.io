@@ -102,16 +102,17 @@ body {
     color: #00ff00;
 }
 
-/* Add margin for pages other than about and research */
-(.research-page) .content {
-    max-width: 100% !important;
-}
 
-:not(.research-page) .content {
+
+/* Content area */
+.content {
     max-width: 70%;
 }
 
-/* Content area */
+.research-page .content {
+    max-width: 100% !important;
+}
+
 .content {
     flex: 1;
     padding: 0 8rem;
