@@ -6,3 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
         animatedText.classList.add('visible');
     }, 100);
 });
+
+
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.toggle('active');
+}
