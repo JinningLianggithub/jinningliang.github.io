@@ -114,12 +114,12 @@ body {
     line-height: 1.5;
     margin-top: 15%;
     margin-bottom: 25%;
-    max-width: 100%;
+    max-width: 70%;
 }
 
 /* Add margin for pages other than about and research */
-not(.research-page) .content {
-    max-width: 70%;
+(.research-page) .content {
+    max-width: 100% !important;
 }
 
 
