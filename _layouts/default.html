@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}">
         {% endif %}
 </head>
-<body>
+<body class="{% if page.url == '/' %}home-page{% endif %}">
     <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
     <div class="sidebar">
         <div class="sidebar-content">

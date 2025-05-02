@@ -252,18 +252,19 @@ main h3 {
   left: 1rem;
   font-size: 2rem;
   background: none;
-  color: white;
+  color: black;  /* ← 从 white 改为 black */
   border: none;
   z-index: 1000;
   cursor: pointer;
 }
+
 
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
 
-  .sidebar {
+  body:not(.home-page) .sidebar {
     position: fixed;
     top: 0;
     left: -100%;
@@ -274,13 +275,14 @@ main h3 {
     transition: left 0.3s ease;
   }
 
-  .sidebar.active {
+  body:not(.home-page) .sidebar.active {
     left: 0;
   }
 
-  .content {
+  body:not(.home-page) .content {
     margin-left: 0 !important;
     padding: 2rem;
     width: 100%;
   }
 }
+
