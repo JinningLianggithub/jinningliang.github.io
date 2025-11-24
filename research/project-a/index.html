@@ -7,60 +7,46 @@ title: Simulating AGN Feedback
 
 <hr>
 
-<h2>Introduction</h2>
 
 <p>
-Active Galactic Nuclei (AGN) exert powerful influence on their host galaxies. These feedback processes regulate star formation, impact gas inflows, and shape the co-evolution of galaxies and supermassive black holes (SMBHs).
+Active Galactic Nuclei (AGN) exert powerful influence on their host galaxies. These feedback processes regulate star formation, impact gas inflows, and shape the co-evolution of galaxies and supermassive black holes (SMBHs). To explore this, I conduct the following projects.
 </p>
+
+<hr>
+
+<h2>Simulating variable coupling efficiency in idealized disky galaxy</h2>
+
 
 <p>
 Most large-volume cosmological simulations treat AGN feedback using simplified prescriptions with 
 <strong>constant coupling efficiency</strong> — the fraction of AGN luminosity converted to kinetic energy.
 However, observations and small-scale accretion-disc models (especially UV line-driven wind models) 
-suggest that the coupling efficiency <strong>should depend strongly on the black hole accretion rate</strong>, 
+suggest that the coupling efficiency <strong>might depend strongly on the black hole accretion rate</strong>, 
 typically following a power law.
 </p>
 
 <p>
 In this project, I introduce a <strong>new AGN feedback model</strong> where the coupling efficiency varies with the 
-<strong>Eddington ratio</strong>, motivated by UV line-driven wind theory, and study its impact on disc galaxy evolution.
+<strong>Eddington ratio</strong>, motivated by UV line-driven wind model, and study its impact on disc galaxy evolution.
 </p>
 
-<hr>
 
-<h2>Simulation Framework</h2>
+
 
 <p>Our simulations use the <strong>SWIFT</strong> hydrodynamic code with the <strong>COLIBRE</strong> galaxy formation model.
-We construct idealised Milky Way-like galaxies including:</p>
+We construct idealised Milky Way-like galaxies including: a static dark matter halo, a stellar disc, a cold gas disc, a hot circumgalactic medium, and a central SMBH</p>
 
-<ul>
-    <li>A static dark matter halo</li>
-    <li>Stellar disc</li>
-    <li>Cold gas disc</li>
-    <li>Hot circumgalactic medium (CGM)</li>
-    <li>A central SMBH</li>
-</ul>
+<p>Only the thermal AGN feedback is turned on, and we implement the variable coupling efficiency by the following equation</p>
 
-<h3>Key components of the modelling:</h3>
+    <span style="font-family: serif;">
+    \[
+    \eta = \min(N_\eta \, \dot{m}^{\alpha_\eta}, 1)
+    \]
+    </span>
+    where: \(\dot{m}\) = Eddington ratio , and \(N_\eta, \alpha_\eta\) are normalization and slope, respectively, which are free parameters
 
-<ul>
-    <li><strong>Thermal AGN feedback</strong>, representing shock-heated disc winds</li>
-    <li>
-        <strong>Variable coupling efficiency:</strong><br>
-        <span style="font-family: serif;">
-        \[
-        \eta = \min(N_\eta \, \dot{m}^{\alpha_\eta}, 1)
-        \]
-        </span>
-        where:
-        <ul>
-            <li>\(\dot{m}\) = Eddington ratio</li>
-            <li>\(N_\eta, \alpha_\eta\) are free parameters from UV line-driven wind theory</li>
-        </ul>
-    </li>
-    <li>BH growth regulated by Bondi accretion with turbulence/vorticity corrections</li>
-    <li>Self-consistent star formation, cooling, SN feedback, and chemical enrichment</li>
-</ul>
+
+
 
 <hr>
 
