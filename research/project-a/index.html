@@ -3,117 +3,155 @@ layout: default
 title: Simulating AGN Feedback
 ---
 
-# Simulating AGN Feedback
+<h1>Simulating AGN Feedback</h1>
 
+<hr>
 
----
+<h2>Introduction</h2>
 
-##  Introduction
-
+<p>
 Active Galactic Nuclei (AGN) exert powerful influence on their host galaxies. These feedback processes regulate star formation, impact gas inflows, and shape the co-evolution of galaxies and supermassive black holes (SMBHs).
+</p>
 
-Most large-volume cosmological simulations treat AGN feedback using simplified prescriptions with **constant coupling efficiency**—the fraction of AGN luminosity converted to kinetic energy. However, observations and small-scale accretion-disc models (especially UV line-driven wind models) suggest that the coupling efficiency **should depend strongly on the black hole accretion rate**, typically following a power law.
+<p>
+Most large-volume cosmological simulations treat AGN feedback using simplified prescriptions with 
+<strong>constant coupling efficiency</strong> — the fraction of AGN luminosity converted to kinetic energy.
+However, observations and small-scale accretion-disc models (especially UV line-driven wind models) 
+suggest that the coupling efficiency <strong>should depend strongly on the black hole accretion rate</strong>, 
+typically following a power law.
+</p>
 
-In this project, I introduce a **new AGN feedback model** where the coupling efficiency varies with the **Eddington ratio**, motivated by UV line-driven wind theory, and study its impact on disc galaxy evolution.
+<p>
+In this project, I introduce a <strong>new AGN feedback model</strong> where the coupling efficiency varies with the 
+<strong>Eddington ratio</strong>, motivated by UV line-driven wind theory, and study its impact on disc galaxy evolution.
+</p>
 
----
+<hr>
 
-##  Simulation Framework
+<h2>Simulation Framework</h2>
 
-Our simulations use the **SWIFT** hydrodynamic code with the **COLIBRE** galaxy formation model.  
-We construct idealised Milky Way-like galaxies including:
+<p>Our simulations use the <strong>SWIFT</strong> hydrodynamic code with the <strong>COLIBRE</strong> galaxy formation model.
+We construct idealised Milky Way-like galaxies including:</p>
 
-- A static dark matter halo  
-- Stellar disc  
-- Cold gas disc  
-- Hot circumgalactic medium (CGM)  
-- A central SMBH
+<ul>
+    <li>A static dark matter halo</li>
+    <li>Stellar disc</li>
+    <li>Cold gas disc</li>
+    <li>Hot circumgalactic medium (CGM)</li>
+    <li>A central SMBH</li>
+</ul>
 
-### Key components of the modelling:
+<h3>Key components of the modelling:</h3>
 
-- **Thermal AGN feedback**, representing shock-heated disc winds  
-- **Variable coupling efficiency:**  
-  \[
-  \eta = \min(N_\eta \, \dot{m}^{\alpha_\eta}, 1)
-  \]
-  where  
-  - \( \dot{m} \) = Eddington ratio  
-  - \( N_\eta, \alpha_\eta \) = free parameters motivated by UV line-driven wind models  
+<ul>
+    <li><strong>Thermal AGN feedback</strong>, representing shock-heated disc winds</li>
+    <li>
+        <strong>Variable coupling efficiency:</strong><br>
+        <span style="font-family: serif;">
+        \[
+        \eta = \min(N_\eta \, \dot{m}^{\alpha_\eta}, 1)
+        \]
+        </span>
+        where:
+        <ul>
+            <li>\(\dot{m}\) = Eddington ratio</li>
+            <li>\(N_\eta, \alpha_\eta\) are free parameters from UV line-driven wind theory</li>
+        </ul>
+    </li>
+    <li>BH growth regulated by Bondi accretion with turbulence/vorticity corrections</li>
+    <li>Self-consistent star formation, cooling, SN feedback, and chemical enrichment</li>
+</ul>
 
-- **BH growth regulated by Bondi accretion with turbulence/vorticity corrections**
-- **Self-consistent star formation, cooling, SN feedback, and chemical enrichment**
+<hr>
 
----
+<h2>Figure Placeholder</h2>
 
-##  Figure Placeholder (attach your own)
-**Figure 1:** *Schematic illustration of the simulation setup*, including the stellar disc, gas disc, hot CGM, and the location of the SMBH.
+<p><strong>Figure 1:</strong> <em>Schematic illustration of the simulation setup</em>, including the stellar disc, gas disc, hot CGM, and the location of the SMBH.</p>
 
----
+<hr>
 
-##  Feedback Model: Variable Coupling Efficiency
+<h2>Feedback Model: Variable Coupling Efficiency</h2>
 
+<p>
 UV line-driven wind models predict that the kinetic luminosity of AGN winds scales with the Eddington ratio as:
+</p>
 
+<p style="font-family: serif;">
 \[
 L_{\text{kin}} / L_{\text{bol}} \propto \dot{m}^{2.6}
 \]
+</p>
 
-This motivates replacing the traditional constant \(\eta\) with a physically motivated one that evolves with accretion state.
+<p>
+This motivates replacing the traditional constant efficiency with a physically motivated model that evolves with accretion state.
+</p>
 
-We explore:
+<p>We explore:</p>
 
-- **Fiducial variable model:**  
-  \[
-  \eta \propto \dot{m}^{2.6}
-  \]
-- **Constant-efficiency control model:** \(\eta = 0.05\)
-- **Variations in slope and normalization:**  
-  \(\alpha_\eta = 0.5, 1.5, 3.0\),  
-  \(N_\eta = 10, 300, 3000\)
+<ul>
+    <li><strong>Fiducial variable model:</strong> \(\eta \propto \dot{m}^{2.6}\)</li>
+    <li><strong>Constant-efficiency control model:</strong> \(\eta = 0.05\)</li>
+    <li>
+        <strong>Variations in slope and normalization:</strong>
+        \(\alpha_\eta = 0.5, 1.5, 3.0\),  
+        \(N_\eta = 10, 300, 3000\)
+    </li>
+</ul>
 
+<p>
 These tests reveal how sensitive AGN wind feedback is to the underlying physics of SMBH accretion.
+</p>
 
----
+<hr>
 
-##  Figure Placeholder  
-**Figure 2:** *Coupling efficiency vs. Eddington ratio* for different values of \(N_\eta\) and \(\alpha_\eta\).
+<h2>Figure Placeholder</h2>
+<p><strong>Figure 2:</strong> <em>Coupling efficiency vs. Eddington ratio</em> for different parameter sets.</p>
 
----
+<hr>
 
-##  Results
-###  1. **Black Hole Growth Changes Dramatically**
-Lower coupling efficiency -> weaker AGN feedback -> **much faster SMBH growth**.
+<h2>Results</h2>
 
-This is the most prominent outcome of the study.
+<h3>1. <strong>Black Hole Growth Changes Dramatically</strong></h3>
 
-- High-\eta models: AGN quickly self-regulates -> low accretion  
-- Low-\eta models: sustained high Eddington ratios -> rapid mass growth
+<p>
+Lower coupling efficiency → weaker AGN feedback → 
+<strong>much faster SMBH growth</strong>.
+This is the most important outcome.
+</p>
 
-####  Figure Placeholder  
-**Figure 2:** *BH accretion rate and mass growth history* for constant vs. variable efficiency.
+<ul>
+    <li>High-\(\eta\): AGN self-regulates quickly → low accretion</li>
+    <li>Low-\(\eta\): sustained high Eddington ratios → rapid BH growth</li>
+</ul>
 
----
+<h4>Figure Placeholder</h4>
+<p><strong>Figure 3:</strong> <em>BH accretion rate and mass growth history</em> comparing efficiency models.</p>
 
-###  2. **Outflow Strength Depends Strongly on Efficiency**
-- High-\eta: short, powerful bursts; strong hot bubbles  
-- Low-\eta: weaker but long-lasting outflows
+<hr>
 
-These behaviours directly track the evolution of the coupling efficiency.
+<h3>2. <strong>Outflow Strength Depends Strongly on Efficiency</strong></h3>
 
-####  Figure Placeholder  
-**Figure 3:** *AGN-driven outflow structure* (density/temperature maps comparing high-\eta and low-\eta runs).
+<ul>
+    <li>High-\(\eta\): short, powerful bursts; strong hot bubbles</li>
+    <li>Low-\(\eta\): weaker but long-lasting outflows</li>
+</ul>
 
----
+<h4>Figure Placeholder</h4>
+<p><strong>Figure 4:</strong> <em>AGN-driven outflow structure</em> (density/temperature maps).</p>
 
-###  3. **Galaxy Properties Remain Relatively Stable**
-The global galaxy structure-gas mass, star formation rate, disc morphology-changes only mildly across models.
+<hr>
 
-This is due to **self-regulation**: the AGN adjusts its activity to maintain equilibrium.
+<h3>3. <strong>Galaxy Properties Remain Relatively Stable</strong></h3>
 
-####  Figure Placeholder  
-**Figure 4:** *Star formation rate vs. time* for variable and constant efficiency.
+<p>
+Gas mass, star formation, and disc morphology vary only mildly across models due to 
+<strong>self-regulation</strong>.
+</p>
 
----
+<h4>Figure Placeholder</h4>
+<p><strong>Figure 5:</strong> <em>Star formation rate vs. time</em>.</p>
 
-##  Optional Figure  
-**Figure 5:** *Coupling efficiency vs. Eddington ratio*, showing the difference between constant and variable \eta models.
+<hr>
+
+<h2>Optional Figure</h2>
+<p><strong>Figure 6:</strong> <em>Coupling efficiency vs. Eddington ratio</em>, summarizing differences between models.</p>
