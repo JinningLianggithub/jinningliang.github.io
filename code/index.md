@@ -15,5 +15,7 @@ The code that I developed or built can be seen below:
 
 - Morphological decomposition algorithm that separate simulated galaxies into bulges, stellar halos, thin disks and thick disks:<a href="https://github.com/JinningLianggithub/MorphDecom">MorphDecom</a>
 
+- Pipeline for uncovering galaxy-halo connection using random forest, SHAP, and symbolic regression:<a href="https://github.com/JinningLianggithub/Gal-halo_Symbolic-regression">Gal-halo_Symbolic-regression</a>
+
 
  
