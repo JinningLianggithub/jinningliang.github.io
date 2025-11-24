@@ -38,39 +38,14 @@ We construct idealised Milky Way-like galaxies including: a static dark matter h
 
 <p>Only the thermal AGN feedback is turned on, and we implement the variable coupling efficiency by the following equation</p>
 
-    <span style="font-family: serif;">
-    \[
-    \eta = \min(N_\eta \, \dot{m}^{\alpha_\eta}, 1)
-    \]
-    </span>
-    where: \(\dot{m}\) = Eddington ratio , and \(N_\eta, \alpha_\eta\) are normalization and slope, respectively, which are free parameters
-
-
-
-
-<hr>
-
-<h2>Figure Placeholder</h2>
-
-<p><strong>Figure 1:</strong> <em>Schematic illustration of the simulation setup</em>, including the stellar disc, gas disc, hot CGM, and the location of the SMBH.</p>
-
-<hr>
-
-<h2>Feedback Model: Variable Coupling Efficiency</h2>
-
-<p>
-UV line-driven wind models predict that the kinetic luminosity of AGN winds scales with the Eddington ratio as:
-</p>
-
-<p style="font-family: serif;">
+<span style="font-family: serif;">
 \[
-L_{\text{kin}} / L_{\text{bol}} \propto \dot{m}^{2.6}
+\eta = \min(N_\eta \, \dot{m}^{\alpha_\eta}, 1)
 \]
-</p>
+</span>
+where: \(\dot{m}\) is Eddington ratio. \(N_\eta, \alpha_\eta\) are normalization and slope, respectively, which are free parameters.
 
-<p>
-This motivates replacing the traditional constant efficiency with a physically motivated model that evolves with accretion state.
-</p>
+<hr>
 
 <p>We explore:</p>
 
