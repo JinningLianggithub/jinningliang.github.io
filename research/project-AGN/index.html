@@ -7,7 +7,6 @@ title: Simulating AGN Feedback
 
 <hr>
 
-
 <p>
 Active Galactic Nuclei (AGN) exert powerful influence on their host galaxies. These feedback processes regulate star formation, impact gas inflows, and shape the co-evolution of galaxies and supermassive black holes (SMBHs). To explore this, we conduct the following projects.
 </p>
@@ -16,43 +15,136 @@ Active Galactic Nuclei (AGN) exert powerful influence on their host galaxies. Th
 
 <h2>Simulating variable coupling efficiency in idealized disky galaxy</h2>
 
+<p>
+  <em>Liang, J., Lacey, C. G., Huško, F., Chaikin, E., Bose, S. (2026), submitted to MNRAS.
+  [<a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250312322L/abstract" target="_blank">ADS</a>]
+  [<a href="https://arxiv.org/abs/2603.12322" target="_blank">arXiv</a>]</em>
+</p>
+
+<h3>Motivation</h3>
 
 <p>
-Most large-volume cosmological simulations treat AGN feedback using simplified prescriptions with 
-<strong>constant coupling efficiency</strong> — the fraction of AGN luminosity converted to kinetic energy.
-However, observations and small-scale accretion-disc models (especially UV line-driven wind models) 
-suggest that the coupling efficiency <strong>might depend strongly on the black hole accretion rate</strong>, 
-typically following a power law.
+AGN feedback from SMBHs plays a critical role in regulating galaxy growth, particularly in suppressing star formation in massive galaxies. However, existing large-volume cosmological simulations — including EAGLE, IllustrisTNG, and COLIBRE — treat AGN feedback using simplified prescriptions with a <strong>constant coupling efficiency</strong>: a fixed fraction of AGN luminosity that is converted into thermal energy and deposited into the surrounding gas. While such models successfully reproduce key observational benchmarks (e.g. the galaxy stellar mass function and the BH mass–stellar mass relation), they are phenomenological and lack physical motivation for the choice of efficiency.
 </p>
 
 <p>
-In this project, we introduce a <strong>new AGN feedback model</strong> where the coupling efficiency varies with the 
-<strong>Eddington ratio</strong>, motivated by UV line-driven wind model, and study its impact on disc galaxy evolution.
+Observations of ultra-fast outflows (UFOs) and semi-analytical models of UV line-driven winds (e.g. the Qwind model, Quera-Bofarull et al. 2023) suggest a more physically motivated picture: the feedback coupling efficiency should <strong>depend on the Eddington ratio</strong> of the black hole, following an approximately power-law relation. This motivates implementing a new AGN feedback model where the coupling efficiency is no longer fixed, but varies with the accretion state of the black hole.
 </p>
 
+<h3>A New Variable Coupling Efficiency Model</h3>
 
-
-
-<p>Our simulations use the <strong>SWIFT</strong> hydrodynamic code with the <strong>COLIBRE</strong> galaxy formation model.
-We construct idealised Milky Way-like galaxies including: a static dark matter halo, a stellar disc, a cold gas disc, a hot circumgalactic medium, and a central SMBH</p>
-
-<p>Only the thermal AGN feedback is turned on, and we implement the variable coupling efficiency by the following equation</p>
+<p>
+We implement a new thermal AGN feedback model in the <strong>SWIFT</strong> hydrodynamic code with the <strong>COLIBRE</strong> galaxy formation subgrid physics. In this model, the AGN energy injection coupling efficiency \(\eta\) follows a power-law dependence on the Eddington-normalised accretion rate \(\dot{m}\):
+</p>
 
 <span style="font-family: serif;">
 \[
-\eta = \min(N_\eta \, \dot{m}^{\alpha_\eta}, 1)
+\eta = \min\!\left(N_\eta \, \dot{m}^{\,\alpha_\eta},\; 1\right)
 \]
 </span>
 
 <p>
-where: \(\dot{m}\) is Eddington ratio. \(N_\eta, \alpha_\eta\) are normalization and slope, respectively, which are free parameters.
-The fiducial model is \(\eta \propto \dot{m}^{2.6}\). Additionally, we test variations in slope and normalization by \(N_\eta = 10, 300, 3000\) while fixing slope as 2.6, or \(\alpha_\eta = 0.5, 1.5, 3.0\) but requiring \(\eta = 0.1\) when \(\dot{m} = 0.1\). The figure showing how \(\eta\) vary with \(\dot{m}\) is attached below.
+where \(N_\eta\) is the normalisation and \(\alpha_\eta\) is the slope — both free parameters. The fiducial model adopts \(\alpha_\eta = 2.6\), motivated by the Qwind predictions for UV line-driven winds, with the normalisation set to reproduce \(\eta = 0.1\) at \(\dot{m} = 0.1\), consistent with observational constraints on UFOs. We also explore variations: fixing the slope and varying \(N_\eta = 10,\, 300,\, 3000\), or fixing the normalisation while varying \(\alpha_\eta = 0.5,\, 1.5,\, 3.0\).
 </p>
-
-
-
 
 <p>
-The main results are
+The figure below shows how \(\eta\) varies with \(\dot{m}\) for all model variants. At low Eddington ratios (which dominate our simulations), the variable coupling efficiency is substantially lower than the fiducial constant value of \(\eta = 0.05\). This key difference has important consequences for BH self-regulation.
 </p>
 
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-AGN/fig2.pdf"
+       alt="Coupling efficiency η as a function of Eddington ratio"
+       style="max-width: 65%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 2.</strong> The coupling efficiency \(\eta\) as a function of Eddington ratio \(\dot{m}\) for all
+    variable coupling efficiency models tested in this work. Upper panel shows variations in slope \(\alpha_\eta\);
+    lower panel shows variations in normalisation \(N_\eta\). The fiducial variable model (\(N_\eta = 39.81\),
+    \(\alpha_\eta = 2.6\)) is shown in black. The grey shaded region marks where \(\eta\) is capped at unity.
+  </figcaption>
+</figure>
+
+<h3>Simulation Setup</h3>
+
+<p>
+We simulate idealised Milky Way-mass disc galaxies using the SWIFT code with COLIBRE subgrid physics. Each simulation includes: a static Hernquist dark matter halo (\(M_{200} = 1.37 \times 10^{12}\,M_\odot\)), an exponential stellar disc (\(M_{d,*} = 4.93 \times 10^{10}\,M_\odot\)), a cold gas disc (\(M_{d,\rm gas} = 5.48 \times 10^{9}\,M_\odot\)), a hot circumgalactic medium (CGM, \(M_{\rm CGM} = 9.3 \times 10^{10}\,M_\odot\)), and a central SMBH. The CGM is initialised in dynamical equilibrium using an extended version of the method from Nobels et al. (2022), with a 3 Gyr relaxation phase to achieve equilibrium in the non-spherical disc potential. We vary the initial BH mass across \(M_{\rm BH} = 10^6,\, 4\times10^6,\, 10^7,\, 10^8,\, 10^9\,M_\odot\) and run each simulation for 3.3 Gyr with the full COLIBRE subgrid physics active (cooling, star formation, stellar feedback, AGN feedback). Only the thermal AGN feedback mode is activated to isolate the effects of wind-driven feedback.
+</p>
+
+<p>
+The three panels below provide a visual overview of the AGN feedback impact at two key epochs. Face-on cold gas maps (top row) reveal that constant-efficiency feedback excavates a large central cavity, while the variable model retains more cold gas. Edge-on temperature maps (middle row) show that AGN runs produce large hot bubbles in the polar directions absent in the SN-only case. Radial velocity maps (bottom row) confirm that AGN feedback drives substantially faster and more extended outflows.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-AGN/fig3.pdf"
+       alt="Cold gas surface density, temperature, and radial velocity maps"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 3.</strong> Visualisations of three runs at two times: the SN-only run (left), the
+    \(M_{\rm BH} = 10^8\,M_\odot\) fiducial constant coupling efficiency run (middle), and the fiducial variable
+    coupling efficiency run (right). <em>Top row</em>: face-on cold gas (\(T \leq 8000\) K) surface density maps
+    at \(t = 3.04\) Gyr. <em>Middle row</em>: edge-on mass-weighted temperature maps at \(t = 0.36\) Gyr.
+    <em>Bottom row</em>: edge-on radial velocity maps at \(t = 0.36\) Gyr. AGN feedback drives powerful
+    bipolar outflows and heats large volumes of gas; the variable efficiency model produces more moderate feedback
+    than the constant-efficiency case.
+  </figcaption>
+</figure>
+
+<h3>Main Results</h3>
+
+<h4>1. BH self-regulation is enhanced in the variable efficiency model</h4>
+
+<p>
+A central finding of this work is that the variable coupling efficiency model produces stronger and more sustained BH self-regulation. In the constant coupling efficiency model (\(\eta = 0.05\)), strong early feedback rapidly depletes the central gas supply, causing the Eddington ratio to drop by 2–3 orders of magnitude. In the variable model, the lower coupling efficiency at low \(\dot{m}\) allows more gas to fall back toward the BH, maintaining higher accretion rates at late times. This self-regulation leads to faster BH mass growth, by up to a factor of a few compared to the constant model — a potentially important channel for producing overmassive black holes at high redshifts, as now being observed by JWST.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-AGN/fig6.pdf"
+       alt="BH accretion rate and mass growth for different BH masses"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 6.</strong> Eddington-normalised accretion rate \(\dot{m}\) (top row) and BH mass growth
+    \(M_{\rm BH}/M_{\rm BH,0}\) (bottom row) as a function of time for the fiducial constant efficiency model
+    (left column) and fiducial variable efficiency model (right column), for all BH masses. For the same BH mass,
+    the variable model yields larger \(\dot{m}\), lower \(\eta\), and faster BH mass growth — hallmarks of
+    stronger self-regulation.
+  </figcaption>
+</figure>
+
+<h4>2. Galaxy properties are largely insensitive to the choice of efficiency model</h4>
+
+<p>
+Despite the differences in BH accretion rates and coupling efficiencies, the evolution of global galaxy properties — star formation rate (SFR), cold gas disc mass, and stellar mass — is remarkably similar between the fiducial constant and variable efficiency models for the same BH mass. This reflects the self-regulating nature of AGN feedback: when the coupling efficiency decreases, the accretion rate adjusts upward to compensate, ultimately injecting a similar total amount of energy into the galaxy. The BH mass is the primary driver of galaxy-scale feedback effects, not the choice of efficiency model.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-AGN/fig8.pdf"
+       alt="SFR, cold gas disc mass, and stellar mass evolution"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 8.</strong> Evolution of the galaxy SFR (top), cold gas disc mass (middle), and stellar mass
+    growth (bottom) for the fiducial constant (dashed, left column) and fiducial variable (solid, right column)
+    coupling efficiency models, for all BH masses. For a given BH mass, the two models produce very similar
+    galaxy evolution — demonstrating that BH mass, not efficiency model, is the dominant factor.
+  </figcaption>
+</figure>
+
+<h4>3. Stronger feedback drives more powerful outflows to CGM scales</h4>
+
+<p>
+Analysing radial outflow profiles confirms that stronger AGN feedback — whether from higher \(\eta\) or higher BH mass — drives gas more effectively into the circumgalactic medium. At early times, the constant coupling efficiency model produces slightly stronger outflows at CGM scales (~50 kpc), while the variable model sustains more moderate but longer-lived outflow activity. At late times, higher-mass BHs show lower central outflow rates due to central gas depletion, while lower-mass BHs maintain quasi-steady galactic fountain cycles. Outflows are predominantly bipolar (polar direction), with the equatorial region dominated by inflow and fountain recycling.
+</p>
+
+<h4>4. Role of the circumgalactic medium</h4>
+
+<p>
+Comparing simulations with and without a CGM, we find that the CGM plays a crucial role in sustaining long-term star formation and AGN activity. Without a CGM, the cold gas disc is depleted within ~2 Gyr and both BH accretion and SFR drop sharply. With the CGM, gas continuously cools and flows back onto the disc, replenishing the reservoir for both star formation and BH accretion. This underscores the importance of including a realistic CGM in idealised galaxy simulations.
+</p>
+
+<h3>Conclusions</h3>
+
+<p>
+This work demonstrates that a physically motivated, variable AGN coupling efficiency model produces broadly similar galaxy evolution to a constant-efficiency model, while achieving improved BH self-regulation. The variable coupling efficiency leads to faster BH growth — particularly relevant to explain the overmassive BHs recently discovered by JWST at high redshifts — while leaving the SFR history, cold gas disc, and stellar mass largely unchanged. These results are drawn from idealised Milky Way-mass galaxy simulations; future work will extend this model to fully cosmological simulations with the COLIBRE model to assess its impact in a cosmological context. The simulation movies can be found at <a href="https://github.com/JinningLianggithub/VariableAGN_movie/" target="_blank">this GitHub repository</a>.
+</p>
+
+<hr>
+
+<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
