@@ -48,31 +48,9 @@ The deceleration of a GC moving through the host potential is given by the Chand
 \]
 
 <p>
-where \(\sigma\) is the local velocity dispersion of the background particles and \(\ln\Lambda\) is the Coulomb logarithm. The choice of \(\ln\Lambda\) is critical: the standard assumption \(\ln\Lambda = \ln(M/m)\) overestimates friction and fails to reproduce core stalling — the well-known tendency of GC orbits to halt rather than continue decaying once they reach a constant-density core. Following Petts et al. (2015), we instead adopt a locally calibrated prescription:
+where \(\sigma\) is the local velocity dispersion of the background particles and \(\ln\Lambda\) is the Coulomb logarithm. The details of the Coulomb logarithm can be seen in the paper.
 </p>
 
-\[
-\ln\Lambda = \ln\left(\frac{b_\mathrm{max}}{r_{1/2}}\right),
-\quad b_\mathrm{max} = \frac{r}{\gamma+1}
-\tag{3}
-\]
-
-<p>
-where \(r_{1/2}\) is the GC half-mass radius, \(r\) is the galactocentric radius, and \(\gamma = -\mathrm{d}\ln\rho/\mathrm{d}\ln r\) is the local logarithmic slope of the host density profile. In a cored profile, \(\gamma \to 0\) near the centre and \(b_\mathrm{max} \to r\), so \(\ln\Lambda \to \ln(r/r_{1/2})\) and friction weakens dramatically, reproducing core stalling. This is a significant improvement over prior work that treated the Coulomb logarithm as constant.
-</p>
-
-<p>
-For a GC on a circular orbit at radius \(r\), the orbit evolves according to
-</p>
-
-\[
-\frac{\mathrm{d}r}{\mathrm{d}t} = \frac{a_\mathrm{DF}}{v_c(r)} \cdot r,
-\tag{4}
-\]
-
-<p>
-where \(v_c(r) = \sqrt{GM_\mathrm{tot}(<r)/r}\) is the circular velocity in the composite (stars + dark matter) potential. For non-circular orbits, we model each GC orbit as a sequence of pseudo-circular steps with instantaneous radius updated at each timestep. Since \(a_\mathrm{DF} \propto m\), more massive GCs decay faster — directly producing the observed mass segregation.
-</p>
 
 <h4>II. Tidal Evolution and the Structure of GCs</h4>
 

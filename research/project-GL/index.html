@@ -1,0 +1,261 @@
+---
+layout: default
+title: Gravitational Lensing Computation
+---
+
+<h1>Gravitational Lensing Computation</h1>
+
+<hr>
+
+<p>
+Gravitational lensing — the bending of light and other signals by massive objects — is one of the most powerful probes of gravity and spacetime geometry. Beyond light, messengers such as neutrinos, gravitational waves, and cosmic rays can also experience deflection. Studying lensing in alternative spacetimes allows us to test General Relativity and constrain models of dark energy and exotic matter. We investigate these effects in the following project.
+</p>
+
+<hr>
+
+<h2>Deflection and Gravitational Lensing in the Kiselev Black Hole Spacetime</h2>
+
+<p>
+  <em>Liu, H., Liang, J., &amp; Jia, J. (2022), Physical Review D, 105, 104053.
+  [<a href="https://ui.adsabs.harvard.edu/abs/2022PhRvD.105j4053L/abstract" target="_blank">ADS</a>]
+  [<a href="https://arxiv.org/abs/2204.04519" target="_blank">arXiv</a>]</em>
+</p>
+
+<h3>Motivation</h3>
+
+<p>
+The accelerated expansion of the Universe has motivated a wide range of dark energy models, among which the quintessence model is particularly appealing due to its connections with dynamical fields arising from particle physics. The Kiselev black hole spacetime, introduced by Kiselev (2003), describes a black hole surrounded by matter with an equation of state \(P = \omega\rho\), where the EOS parameter \(\omega\) can be varied to mimic different types of matter — including dust (\(\omega = 0\)), radiation (\(\omega = 1/3\)), and quintessence-like fields (\(\omega < 0\)).
+</p>
+
+<p>
+Recent progress in observing supermassive black holes — including the M87* and Sgr A* images by the Event Horizon Telescope — has opened new opportunities to test black hole spacetimes beyond the standard Kerr solution. Since observables in gravitational lensing (apparent angles, time delays, magnifications) are generally sensitive to the Kiselev parameters \((\alpha, \omega)\), they offer a quantitative way to constrain these parameters in the future.
+</p>
+
+<p>
+Previous studies of deflection in the Kiselev spacetime were limited to specific values of \(\omega\), considered only null (light) rays, and typically assumed infinite source and observer distances. In this work, we overcome all three limitations: we treat both null and timelike signals with a general \(\omega\), and we naturally incorporate the finite distance effect of the source and detector.
+</p>
+
+<h3>The Kiselev Spacetime and Perturbative Method</h3>
+
+<p>
+The Kiselev black hole spacetime is described by the general static, spherically symmetric metric
+</p>
+
+<span style="font-family: serif;">
+\[
+\mathrm{d}s^2 = -A(r)\,\mathrm{d}t^2 + B(r)\,\mathrm{d}r^2 + C(r)\left(\mathrm{d}\theta^2 + \sin^2\theta\,\mathrm{d}\varphi^2\right)
+\]
+</span>
+
+<p>
+with the specific metric functions
+</p>
+
+<span style="font-family: serif;">
+\[
+A(r) = \frac{1}{B(r)} = 1 - \frac{2M}{r} - \frac{\alpha}{r^{3\omega+1}}, \quad C(r) = r^2
+\]
+</span>
+
+<p>
+where \(M\) is the spacetime mass, \(\alpha > 0\) controls the amount of surrounding matter, and \(\omega < 0\) is its EOS parameter. When \(-1/3 < \omega < 0\), the spacetime is asymptotically flat; when \(-1 \leq \omega < -1/3\), it is non-asymptotically flat and possesses a cosmological horizon.
+</p>
+
+<p>
+To compute the deflection angle, we extend a perturbative method previously developed for asymptotically flat spacetimes (Huang &amp; Jia 2020) to handle non-integer power asymptotic expansions. The total angular change of the trajectory from source to detector is
+</p>
+
+<span style="font-family: serif;">
+\[
+\Delta\phi = \left(\int_{r_0}^{r_s} + \int_{r_0}^{r_d}\right) \sqrt{\frac{B}{C}} \frac{L}{\sqrt{(E^2/A - \kappa)\,C - L^2}}\,\mathrm{d}r
+\]
+</span>
+
+<p>
+where \(r_0\) is the closest approach radius, \(L\) and \(E\) are the angular momentum and energy constants, and \(\kappa = 0, 1\) for null and timelike signals respectively. Through a carefully constructed change of variables \(1/r = q(u/b)\), the integrals are reduced to a tractable series form that can be evaluated order by order.
+</p>
+
+<h3>Deflection Angle: Asymptotically Flat Case (\(-1/3 < \omega < 0\))</h3>
+
+<p>
+For the asymptotically flat case, the deflection angle is expressible as a quasi-power series of the dimensionless quantities \(M/b\), \(b/r_{s,d}\) and \(\alpha/M^{1+3\omega}\). To leading non-trivial order, the result is
+</p>
+
+<span style="font-family: serif;">
+\[
+\Delta\phi = \sum_{i=s,d}\left\{\left(\frac{\pi}{2} - \frac{b}{r_i}\right) + \frac{M}{b}\left(1 + \frac{1}{v^2}\right) + \frac{\sqrt{\pi}\,\Gamma\!\left(\frac{2+3\omega}{2}\right)}{(2+3\omega)\,\Gamma\!\left(\frac{3(1+\omega)}{2}\right)}\left(1 + \frac{1+3\omega}{v^2}\right)\frac{\alpha}{b^{1+3\omega}}\right\} + \mathcal{O}(\text{higher orders})
+\]
+</span>
+
+<p>
+where \(b\) is the impact parameter, \(v\) is the signal velocity, and \(r_s\), \(r_d\) are the source and detector radii. The first term is the geometric baseline, the second is the standard Schwarzschild-like deflection (generalised to timelike signals), and the third term captures the effect of the Kiselev matter parameterised by \(\alpha\) and \(\omega\).
+</p>
+
+<p>
+We find that for fixed \(\omega \in (-1/3, 0)\), the deflection angle increases roughly linearly with \(\alpha\). For fixed \(\alpha > 0\), the deflection decreases as \(\omega\) increases towards zero. Both effects can be understood from the effective potential of the Kiselev spacetime: a larger \(\alpha\) or smaller \(\omega\) lowers the effective potential, which ultimately enlarges the integration range and increases the total deflection.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-f/fig1.jpg"
+       alt="Deflection angle convergence and parameter dependence"
+       style="max-width: 80%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 1.</strong> (a) Convergence of the truncated series \(\Delta\phi_{\bar{m}\bar{n}}\) to the numerical result as a function of impact parameter \(b\), for \(\omega = -1/6\), \(\alpha = M^{3\omega+1}/10\), \(r_s = r_d = 10^6 M\), \(v = 99/100\). Inset: the numerical integration result showing monotonic decrease of \(\Delta\phi\) with \(b\). (b) \(\Delta\phi - \pi\) as a function of \(\alpha\) and \(\omega\) with \(b = 100M\), demonstrating the linear increase with \(\alpha\) and the decrease with increasing \(\omega\).
+  </figcaption>
+</figure>
+
+<h3>Deflection Angle: Non-Asymptotically Flat Case (\(-1 \leq \omega < -1/3\))</h3>
+
+<p>
+When \(-1 \leq \omega < -1/3\), a cosmological horizon exists and the spacetime is not asymptotically flat. The geometrical meaning of the impact parameter \(b\) is lost, and the expansion must be reformulated in terms of the closest approach radius \(r_0\). We employ a two-step expansion: first in small \(\alpha\), then in large \(r_0\). The resulting deflection angle takes the dual-series form
+</p>
+
+<span style="font-family: serif;">
+\[
+\Delta\phi = \sum_{i=s,d}\sum_{n=0}^{\infty}\frac{1}{r_0^n}\sum_{m=0}^{\infty}\left(\frac{\alpha}{r_0^{1+3\omega}}\right)^m \sum_{k=0}^{m+n} I_{n,m,k}\!\left(\frac{r_i}{r_0}\right)
+\]
+</span>
+
+<p>
+To leading order, this expands as
+</p>
+
+<span style="font-family: serif;">
+\[
+\Delta\phi = \sum_{i=s,d}\left\{\frac{\pi}{2} - \frac{r_0}{r_i} + \frac{(2E^2-\kappa)\,M}{(E^2-\kappa)\,r_0} - \frac{E^2 M}{(E^2-\kappa)\,r_i} + \left[\cdots\right]\frac{\alpha}{r_0^{1+3\omega}}\right\} + \mathcal{O}(\varepsilon^2)
+\]
+</span>
+
+<p>
+In contrast to the asymptotically flat case, here increasing \(\alpha\) or decreasing \(\omega\) causes the deflection to <em>increase</em> — the opposite trend compared to the flat case. This is because in this range of \(\omega\), a larger \(\alpha\) or smaller \(\omega\) raises the effective potential, resulting in a larger angular momentum \(L\) and ultimately a greater deflection.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-f/fig2.jpg"
+       alt="Deflection angle convergence and parameter dependence for non-flat case"
+       style="max-width: 80%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 2.</strong> (a) Convergence of the truncated series to the numerical result as a function of \(r_0\) for \(\omega = -1/2\), \(\alpha = 10^{-13}M^{3\omega+1}\). (b) \(\Delta\phi - \pi - \phi_0\) as a function of \(\alpha\) and \(\omega\) with \(r_0 = 100M\), showing that the deflection decreases monotonically as \(\alpha\) increases or \(\omega\) decreases in this regime.
+  </figcaption>
+</figure>
+
+<h3>Gravitational Lensing Equation and Apparent Angles</h3>
+
+<p>
+Since the deflection angles naturally incorporate the finite distance effect, we can use an exact gravitational lensing equation
+</p>
+
+<span style="font-family: serif;">
+\[
+\Delta\phi = \pi \pm \beta_L
+\]
+</span>
+
+<p>
+where \(\beta_L\) is the angle between the source and the lens-detector axis, and the \(\pm\) signs correspond to counter-clockwise and clockwise trajectories respectively. This equation is solved for the two impact parameters \(b_\pm\) (asymptotically flat case) or closest distances \(r_{0\pm}\) (non-flat case), from which the apparent angles \(\theta_\pm\) and time delays are obtained.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-f/fig3.jpg"
+       alt="Gravitational lensing geometry"
+       style="max-width: 55%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 3.</strong> The deflection and gravitational lensing geometry. The source (S) is located at angle \(\beta_L\) from the lens-detector axis. Two images with apparent angles \(\theta_+\) and \(\theta_-\) are formed. The outer cosmological horizon \(r_H\) exists only for the non-asymptotically flat case (\(-1 \leq \omega < -1/3\)).
+  </figcaption>
+</figure>
+
+<p>
+For the asymptotically flat case (\(-1/3 < \omega < 0\)), the lensing equation becomes
+</p>
+
+<span style="font-family: serif;">
+\[
+\mp\beta_L - \frac{b}{r_s} - \frac{b}{r_d} + \frac{2M}{b}\left(1+\frac{1}{v^2}\right) + \frac{\sqrt{\pi}\,\Gamma\!\left(\frac{2+3\omega}{2}\right)}{(2+3\omega)\,\Gamma\!\left(\frac{3(1+\omega)}{2}\right)}\left(1+\frac{1+3\omega}{v^2}\right)\frac{\alpha}{b^{1+3\omega}} = 0
+\]
+</span>
+
+<p>
+We solve this perturbatively in small \(\alpha\) to obtain the impact parameters \(b_\pm = c_{b\pm 0} + c_{b\pm 1}\,\alpha + \mathcal{O}(\alpha^2)\), from which the apparent angles follow via \(\theta_\pm = \arcsin[b_\pm \cdot p(1/r_d)]\).
+</p>
+
+<h3>Main Results</h3>
+
+<h4>1. Effects of \(\alpha\) and \(\omega\) on apparent angles (asymptotically flat case)</h4>
+
+<p>
+Using the Sgr A* SMBH as the lens (\(M = 4.30 \times 10^6\,M_\odot\), \(r_s = r_d = 8.28\) kpc), we study the dependence of the apparent angles \(\theta_\pm\) on the source angle \(\beta\), the matter parameter \(\alpha\), and the EOS parameter \(\omega\). Increasing \(\alpha\) from zero increases both \(\theta_+\) and \(\theta_-\), while decreasing \(\omega\) from zero towards \(-1/3\) also increases both apparent angles. This is because a larger \(\alpha\) or smaller \(\omega\) strengthens the deflection, requiring larger impact parameters for the signal to reach the same detector.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-f/fig4.jpg"
+       alt="Apparent angles for asymptotically flat case"
+       style="max-width: 65%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 4.</strong> The apparent angles \(\theta_\pm\) for the asymptotically flat case (\(-1/3 < \omega < 0\)). <em>Top</em>: as a function of source angle \(\beta\), showing the classical splitting of the two images. <em>Middle</em>: as a function of \(\alpha/M^{1+3\omega}\), showing a weak but positive effect. <em>Bottom</em>: as a function of \(\omega\), showing that smaller \(\omega\) increases both apparent angles.
+  </figcaption>
+</figure>
+
+<h4>2. Time delay between images</h4>
+
+<p>
+The time delay between the two gravitational lensing images is computed from the total travel time formula. For the asymptotically flat case, to the leading orders, it is
+</p>
+
+<span style="font-family: serif;">
+\[
+\Delta^2 t_\pm = \sum_{i=s,d}\left\{\frac{M(3v^2-1)}{v^3}\ln\frac{b_-}{b_+} + \frac{(b_-^2-b_+^2)[3M(v^2-1)+2r_i v^2]}{4r_i^2 v^3} + \frac{\sqrt{\pi}\alpha(3v^2+3\omega-1)\,\Gamma\!\left(\frac{3\omega}{2}\right)\left(b_+^{-3\omega}-b_-^{-3\omega}\right)}{4v^3\,\Gamma\!\left(\frac{3\omega}{2}+\frac{1}{2}\right)} + \cdots\right\}
+\]
+</span>
+
+<p>
+We find that the time delay increases monotonically with the source angle \(\beta\), reaching ~40 minutes for \(\beta \sim 10\) arcseconds using Sgr A* parameters. The effect of \(\alpha\) on the time delay is relatively weak (~3 seconds over the allowed range), while the effect of \(\omega\) becomes significant as \(\omega\) decreases below \(-1/6\).
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-f/fig5.jpg"
+       alt="Time delay for asymptotically flat case"
+       style="max-width: 65%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 5.</strong> The time delay \(\Delta^2 t_\pm\) for the asymptotically flat case. <em>Top</em>: as a function of \(\beta\), showing monotonic increase up to ~40 min. <em>Middle</em>: as a function of \(\alpha\), showing a weak ~3 s variation. <em>Bottom</em>: as a function of \(\omega\), showing significant increase below \(\omega \sim -1/6\).
+  </figcaption>
+</figure>
+
+<h4>3. Apparent angles and time delay (non-asymptotically flat case)</h4>
+
+<p>
+For the non-asymptotically flat case (\(-1 \leq \omega < -1/3\)), the behaviour of the apparent angles with respect to \(\alpha\) is reversed: increasing \(\alpha\) <em>decreases</em> both \(\theta_+\) and \(\theta_-\). This can be understood by analogy to the Schwarzschild-de Sitter limit (\(\omega = -1\)): a positive cosmological-constant-like \(\alpha\) effectively repels the signal, reducing the total deflection. As \(\omega\) decreases from \(-1/3\) to \(-1\), both apparent angles increase and saturate at an asymptotic value.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-f/fig6.jpg"
+       alt="Apparent angles for non-asymptotically flat case"
+       style="max-width: 65%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 6.</strong> The apparent angles \(\theta_\pm\) for the non-asymptotically flat case (\(-1 \leq \omega < -1/3\)). <em>Top</em>: as a function of \(\beta\). Unlike the flat case, the no-gravity line \(\theta_{\rm NG}\) crosses \(\theta_-\) at \(\beta_c \approx 2.1\) arcsec, beyond which the repulsion of \(\alpha\) dominates. <em>Middle</em>: increasing \(\alpha\) decreases both apparent angles. <em>Bottom</em>: decreasing \(\omega\) increases both angles to an asymptotic value.
+  </figcaption>
+</figure>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-f/fig7.jpg"
+       alt="Time delay for non-asymptotically flat case"
+       style="max-width: 65%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 7.</strong> The time delay \(\Delta^2 t_\pm\) for the non-asymptotically flat case. <em>Top</em>: monotonic increase with \(\beta\), reaching ~30 min. <em>Middle</em>: decreasing time delay with increasing \(\alpha\), dropping from ~2 min to ~1.3 min. <em>Bottom</em>: small increase from 112 s to 118 s as \(\omega\) decreases from \(-1/3\) to \(-1\).
+  </figcaption>
+</figure>
+
+<h4>4. Equivalence with Weyl gravity</h4>
+
+<p>
+We prove that the deflection angle of null signals in Weyl gravity, when expressed in terms of the closest approach radius \(r_0\), is exactly equivalent to the Kiselev spacetime result with \(\omega = -2/3\). The additional parameter \(k\) in the Weyl gravity metric does not contribute to the total deflection angle. We provide the full deflection result for \(\omega = -2/3\) to second combined order with finite distance effects included.
+</p>
+
+<h3>Conclusions</h3>
+
+<p>
+This work provides a comprehensive study of gravitational deflection and lensing of both null and timelike signals in the Kiselev black hole spacetime with a variable EOS parameter \(\omega\), while naturally incorporating the finite distance effect of the source and detector. The perturbative deflection angles are obtained in quasi-power series form for both the asymptotically flat case (\(-1/3 < \omega < 0\)) and the non-asymptotically flat case (\(-1 \leq \omega < -1/3\)), and are verified against numerical integration. Using an exact lensing equation, we solve for the apparent angles, time delays, and magnifications of the lensed images, and systematically study their dependence on \(\alpha\) and \(\omega\) using Sgr A* SMBH data. The key finding is that in the asymptotically flat case, increasing \(\alpha\) or decreasing \(\omega\) increases the apparent angles, while in the non-asymptotically flat case, increasing \(\alpha\) or \(\omega\) both lead to smaller apparent angles. These observables offer a new and quantitative route to constrain the Kiselev parameters from future lensing observations.
+</p>
+
+<hr>
+
+<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
