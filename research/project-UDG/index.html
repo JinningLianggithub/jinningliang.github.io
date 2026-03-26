@@ -35,7 +35,7 @@ Each GC orbits in a composite host potential (dark matter + stars) under the inf
 
 <span style="font-family: serif;">
 \[
-\mathbf{a}_{\mathrm{DF}} = -4\pi G^2 m \sum_i \ln\Lambda_i\,\rho_i(r)\,\frac{F(<V_i)}{V_i^3}\,\mathbf{V}_i
+\mathbf{a}_{\mathrm{DF}} = -4\pi G^2 m \sum_i \ln\Lambda_i\,\rho_i(r)\,\frac{F(&lt;V_i)}{V_i^3}\,\mathbf{V}_i
 \]
 </span>
 
@@ -57,14 +57,21 @@ Over 10 Gyr, GCs evolve in mass and structure under tidal stripping and two-body
 where \(\xi_t\) and \(\xi_e\) are the mass fractions beyond the tidal radius and above the escape velocity, \(\tau_{\mathrm{dyn}}\) and \(\tau_r\) are the host dynamical and internal relaxation timescales, and the coupling parameters \(f_t\) and \(f_r\) are calibrated against N-body tidal tracks and Hénon's classical result, respectively. The evolution is strongly mass-dependent: low-mass clusters (\(m \lesssim 10^{4.5}\,M_\odot\)) expand and dissolve, intermediate-mass clusters expand modestly, and massive clusters (\(m \gtrsim 10^6\,M_\odot\)) remain largely intact — naturally producing the observed GC mass function peaked at \(\sim 10^5\,M_\odot\). Full derivations of all model components are given in the paper (Sections 2.1–2.3).
 </p>
 
+
+<p>
+The mass-size evolution is strongly mass-dependent, as illustrated below. The most massive clusters (\(m \gtrsim 10^6\,M_\odot\)) barely evolve in mass or size over 10 Gyr. Intermediate-mass clusters (\(m \approx 10^{5\text{–}6}\,M_\odot\)) primarily expand due to two-body relaxation, with marginal mass loss. Low-mass clusters (\(m \lesssim 10^{4.5}\,M_\odot\)) expand rapidly until tidal truncation takes effect, leading to quick mass loss and eventual dissolution. These mass-dependent behaviours work together to shape the evolved GC mass function — peaked at \(m \sim 10^5\,M_\odot\) — and ensure that mass segregation arises naturally, since massive GCs remain intact and always experience the strongest dynamical friction.
+</p>
+
 <figure style="text-align:center; margin: 2em 0;">
-  <img src="/assets/images/project-UDG/fig1.jpg"
-       alt="Model workflow flowchart"
-       style="max-width: 90%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <img src="/assets/images/project-UDG/fig3.png"
+       alt="Mass-size evolution of star clusters over 10 Gyr"
+       style="max-width: 60%; height: auto; border: 1px solid #ddd; padding: 4px;">
   <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
-    <strong>Figure 1.</strong> Model workflow. Starting from physically-motivated initial conditions (mass function, structure, spatial distribution), GCs are evolved for 10 Gyr under dynamical friction, tidal stripping, and two-body relaxation. The evolved GC statistics are compared to observations via MCMC to constrain the halo mass \(M_h\), concentration \(c\), and initial GC scale radius \(r_0\).
+    <strong>Figure 3.</strong> Mass-size evolution of star clusters over 10 Gyr. Clusters are initialised with sizes following the observed size-mass relation of young star clusters (Brown &amp; Gnedin 2021, blue dashed line) and circular orbits at \(r = 5\) kpc in a host potential with an NFW halo (\(M_h = 10^{12}\,M_\odot\), \(c = 10\)). Colour encodes time from 0 (blue) to 10 Gyr (red). Massive clusters remain nearly intact, while low-mass clusters expand and are tidally disrupted.
   </figcaption>
 </figure>
+
+
 
 <h3>Main Results</h3>
 
@@ -75,7 +82,7 @@ Using MCMC with both NFW (cuspy) and Burkert (cored) halo profiles, we find post
 </p>
 
 <figure style="text-align:center; margin: 2em 0;">
-  <img src="/assets/images/project-UDG/fig4.jpg"
+  <img src="/assets/images/project-UDG/fig4.png"
        alt="Posterior distributions for NFW halo"
        style="max-width: 55%; height: auto; border: 1px solid #ddd; padding: 4px;">
   <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
@@ -90,7 +97,7 @@ Model realizations with the best-fit parameters simultaneously reproduce the obs
 </p>
 
 <figure style="text-align:center; margin: 2em 0;">
-  <img src="/assets/images/project-UDG/fig5.jpg"
+  <img src="/assets/images/project-UDG/fig5.png"
        alt="Model realization compared to data for NFW halo"
        style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
   <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
@@ -105,7 +112,7 @@ UDG1 deviates by \(\sim 2\text{–}3\sigma\) from the GC-abundance–halo-mass r
 </p>
 
 <figure style="text-align:center; margin: 2em 0;">
-  <img src="/assets/images/project-UDG/fig8.jpg"
+  <img src="/assets/images/project-UDG/fig8.png"
        alt="UDG1 on scaling relations"
        style="max-width: 55%; height: auto; border: 1px solid #ddd; padding: 4px;">
   <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
@@ -120,7 +127,7 @@ The most striking difference between cuspy and cored profiles is in nuclear star
 </p>
 
 <figure style="text-align:center; margin: 2em 0;">
-  <img src="/assets/images/project-UDG/fig10.jpg"
+  <img src="/assets/images/project-UDG/fig10.png"
        alt="Nuclear star cluster fraction"
        style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
   <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
