@@ -1,0 +1,197 @@
+---
+layout: default
+title: Dwarf Galaxies and Dark Matter
+---
+
+<h1>Dwarf Galaxies and Dark Matter</h1>
+
+<hr>
+
+<p>
+Ultra-diffuse galaxies (UDGs) — large, extremely low surface-brightness dwarf galaxies — are among the most puzzling objects in modern galaxy formation. They span a wide range of dark matter content, from apparently dark-matter-dominated systems to startling cases with little or no dark matter at all, and they often host anomalously rich globular cluster (GC) systems relative to their stellar mass. In this work, we develop a new method to constrain the dark matter distribution of UDGs using the spatial and mass distribution of their GC populations alone — no spectroscopy required.
+</p>
+
+<hr>
+
+<h2>Constraining the Dark-Matter Distribution of NGC5846-UDG1 with Globular-Cluster Mass Segregation</h2>
+
+<p>
+  <em>Liang, J., Jiang, F., Danieli, S., Benson, A., Hopkins, P. 2024, ApJ, 964, 53.
+  [<a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...964...53L/abstract" target="_blank">ADS</a>]
+  [<a href="https://arxiv.org/abs/2304.14431" target="_blank">arXiv</a>]
+  [<a href="https://github.com/JiangFangzhou/GCevo" target="_blank">Code: GCevo</a>]</em>
+</p>
+
+<h3>Motivation: Mass Segregation as a Dark Matter Probe</h3>
+
+<p>
+The galaxy NGC5846-UDG1 (UDG1) is a remarkable UDG: it hosts roughly 54 GC candidates within twice its stellar half-light radius of \(R_e \approx 2\) kpc, with \(\sim 13\%\) of its stellar light residing in GCs — far more than typical galaxies of comparable stellar mass. Crucially, the GC population shows a striking <strong>radial mass segregation</strong>: more massive GCs are systematically found closer to the galaxy centre. This pattern is the hallmark of <strong>dynamical-friction-driven orbital decay</strong>, since the deceleration force on a GC moving through the dark matter halo scales as
+</p>
+
+<span style="font-family: serif; display: block; text-align: center; margin: 1em 0;">
+\[
+\mathbf{a}_\mathrm{DF} = -\frac{4\pi G^2 m_\mathrm{GC} \rho(r)\, \ln\Lambda}{v^2} \left[ \mathrm{erf}(X) - \frac{2X}{\sqrt{\pi}} e^{-X^2} \right] \hat{v}
+\]
+</span>
+
+<p>
+where \(m_\mathrm{GC}\) is the GC mass, \(\rho(r)\) is the local density of the host halo, \(\ln\Lambda\) is the Coulomb logarithm, and \(X = v/(\sqrt{2}\sigma)\). Because \(\mathbf{a}_\mathrm{DF} \propto m_\mathrm{GC}\), more massive GCs spiral inward faster, naturally producing mass segregation over a Hubble time. The degree of segregation therefore encodes the strength of dynamical friction and, hence, the density profile of the host dark matter halo — offering a way to constrain the dark matter content of UDG1 from imaging data alone.
+</p>
+
+<p>
+A key subtlety is the choice of Coulomb logarithm \(\ln\Lambda\). We adopt the locally calibrated prescription of Petts et al. (2015), which depends on the local density profile slope:
+</p>
+
+<span style="font-family: serif; display: block; text-align: center; margin: 1em 0;">
+\[
+\ln\Lambda = \ln\left(\frac{b_\mathrm{max}}{r_\mathrm{half}}\right)
+\]
+</span>
+
+<p>
+where \(b_\mathrm{max}\) is the maximum impact parameter (set to the local scale length of the host) and \(r_\mathrm{half}\) is the GC half-mass radius. This prescription is well-calibrated against numerical simulations, in particular for cored profiles where the naive Chandrasekhar formula overestimates the friction and misses the phenomenon of <strong>core stalling</strong> — the tendency of GC orbits to stall rather than continue decaying when they reach a constant-density core.
+</p>
+
+<h3>A Semi-Analytical Model of GC Evolution</h3>
+
+<p>
+We develop a semi-analytical model — publicly available as <a href="https://github.com/JiangFangzhou/GCevo" target="_blank">GCevo</a> — that self-consistently evolves a population of GC progenitors in a composite host potential (stellar + dark matter), tracking three coupled physical processes simultaneously: <strong>dynamical friction, tidal evolution, and two-body relaxation</strong>.
+</p>
+
+<p>
+<strong>Orbital evolution under dynamical friction</strong> follows the Chandrasekhar formula with the Petts et al. Coulomb logarithm. The host potential combines a Hernquist stellar component (fit to UDG1's observed Sérsic profile) with either a cuspy <strong>NFW</strong> halo
+</p>
+
+<span style="font-family: serif; display: block; text-align: center; margin: 1em 0;">
+\[
+\rho_\mathrm{NFW}(r) = \frac{\rho_s}{(r/r_s)(1 + r/r_s)^2}
+\]
+</span>
+
+<p>
+or a cored <strong>Burkert</strong> halo
+</p>
+
+<span style="font-family: serif; display: block; text-align: center; margin: 1em 0;">
+\[
+\rho_\mathrm{Bk}(r) = \frac{\rho_0\, r_0^3}{(r + r_0)(r^2 + r_0^2)}
+\]
+</span>
+
+<p>
+parameterised by their virial mass \(M_{200}\) and concentration \(c\) (or core radius \(r_0\)).
+</p>
+
+<p>
+<strong>Tidal evolution</strong> strips mass from a GC as it orbits. The instantaneous tidal radius is set by the balance between the GC's own self-gravity and the tidal force from the host:
+</p>
+
+<span style="font-family: serif; display: block; text-align: center; margin: 1em 0;">
+\[
+r_t = r\left(\frac{m_\mathrm{GC}}{[2 - \mathrm{d}\ln M/\mathrm{d}\ln r]\, M_\mathrm{host}(<r)}\right)^{1/3}
+\]
+</span>
+
+<p>
+Stars outside the tidal radius are gradually stripped, reducing the GC mass. Tidal stripping also shrinks the GC's half-mass radius, which in turn reduces the Coulomb logarithm and weakens dynamical friction — a key coupling between the three processes.
+</p>
+
+<p>
+<strong>Two-body relaxation</strong> drives internal mass loss by heating stars to above the escape velocity. The half-mass relaxation time is
+</p>
+
+<span style="font-family: serif; display: block; text-align: center; margin: 1em 0;">
+\[
+t_\mathrm{rh} = \frac{0.138\, N^{1/2} r_h^{3/2}}{G^{1/2} \bar{m}^{1/2} \ln(0.4N)}
+\]
+</span>
+
+<p>
+where \(N\) is the number of stars, \(r_h\) is the half-mass radius, and \(\bar{m}\) is the mean stellar mass. At each orbit, the GC loses a fraction of its mass set by the ratio of the orbital period to \(t_\mathrm{rh}\). In the low-density outer parts of UDG1, two-body relaxation is the dominant process expanding low-mass GCs, before tidal stripping eventually truncates them.
+</p>
+
+<p>
+The initial conditions for the GC population are described by three components: (i) an initial <strong>mass function</strong>, modelled as a power law \(dN/dm \propto m^{-\alpha}\) (with \(\alpha\) as a free parameter), motivated by young massive star-cluster observations; (ii) an initial <strong>structure-mass relation</strong> following the observed relation for young star clusters (Brown & Gnedin 2021); and (iii) an initial <strong>spatial distribution</strong> modelled as a Hernquist profile with scale radius \(a_\mathrm{GC}\), which is allowed to differ from that of the smooth stellar body. The GC orbits are drawn isotropically, formed \(\sim 10\) Gyr ago. The model is then evolved forward in time and the final GC mass, size, and projected radial distributions are compared to the HST observations.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-udg/fig3.png"
+       alt="GC evolution in the mass-size plane"
+       style="max-width: 80%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 3.</strong> Evolution of GCs in the mass-size plane over 10 Gyr, illustrating the mass-dependent
+    nature of the evolution. Massive GCs (\(m \gtrsim 10^6\,M_\odot\) ) remain largely intact. Intermediate-mass GCs
+    first expand through two-body relaxation, then are tidally truncated and shrink. Low-mass GCs are quickly
+    dissolved. This mass dependence is what drives the observed radial mass segregation.
+  </figcaption>
+</figure>
+
+<h3>MCMC Forward-Modelling and Constraints</h3>
+
+<p>
+We combine the GC evolution model with a Markov Chain Monte Carlo (MCMC) framework, using the <em>emcee</em> package, to simultaneously constrain the dark matter halo parameters (\(M_{200}\), \(c\) or \(r_0\)) and the initial GC population properties (\(\alpha\), \(a_\mathrm{GC}\)). The likelihood is constructed by comparing the forward-modelled distributions of GC mass, half-mass radius, and projected galactocentric distance with those observed in UDG1. We run the full analysis for both NFW and Burkert host halos independently. This is a significant improvement over prior work (Bar et al. 2022; Modak et al. 2022) in that we self-consistently account for tidal evolution and two-body relaxation alongside dynamical friction, rather than treating the GC masses as fixed.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-udg/fig4.png"
+       alt="MCMC posterior distributions with NFW halo"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 4.</strong> Posterior distributions from MCMC forward-modelling of the GC population of UDG1
+    assuming a cuspy NFW host halo. The constrained parameters include the halo virial mass \(M_{200}\), concentration
+    \(c\), initial GC mass function slope \(\alpha\), and initial GC spatial distribution scale radius \(a_\mathrm{GC}\).
+  </figcaption>
+</figure>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-udg/fig6.png"
+       alt="MCMC posterior distributions with Burkert halo"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 6.</strong> Same as Figure 4, but assuming a cored Burkert host halo. The results are broadly similar
+    to the NFW case. In the Burkert halo, core stalling becomes important: GC orbits tend to stall near the core radius
+    rather than continuing to decay, making the mass segregation signal slightly less pronounced than in the NFW case
+    for equivalent halo parameters.
+  </figcaption>
+</figure>
+
+<h3>Results: UDG1 is Dark-Matter Poor with Low Concentration</h3>
+
+<p>
+Assuming zero mass segregation at birth — the most conservative assumption — the MCMC analysis yields a consistent picture regardless of whether the halo is cuspy or cored: <strong>UDG1 is dark-matter poor</strong> compared to the stellar-to-halo-mass relation expected for normal galaxies at its stellar mass, and its halo concentration \(c\) is <strong>lower than the cosmological average</strong>. UDG1 sits \(\sim 2-3\sigma\) below both the stellar-to-halo-mass relation and the GC-abundance-halo-mass relation (the empirical relation between GC count and halo virial mass, calibrated over five decades in virial mass for normal galaxies). The latter result is a key finding: if the GC-abundance-halo-mass relation were naively applied to UDG1's rich GC system, one would infer a halo mass of \(\sim 10^{11}\,M_\odot\) — but our dynamical model finds a much lower value, placing UDG1 in the dark-matter-poor regime.
+</p>
+
+<p>
+The initial spatial distribution of the GC population is found to be <strong>more extended than the smooth stellar distribution</strong>, with the best-fit GC scale radius significantly larger than the Sérsic half-light radius of UDG1's stellar body. This has implications for UDG1's formation: one scenario is that GCs formed ex-situ in satellite galaxies whose disruption deposited GCs at large radii; another is that the GCs formed in-situ during an extended, high-velocity-dispersion star-formation episode, perhaps driven by collisions of high-redshift gas clouds. The similar colours of the GC population support an in-situ origin, but the extended spatial distribution remains puzzling.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-udg/fig9.png"
+       alt="Predicted line-of-sight velocity dispersion profile of GCs"
+       style="max-width: 70%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 9.</strong> Predicted line-of-sight velocity dispersion profile of the evolved GC population
+    in the best-fit NFW (solid) and Burkert (dotted) halos, compared to the smooth stellar velocity dispersion
+    (grey) and the observed GC velocity dispersion from Müller et al. 2020 (orange point). Both profiles show a
+    significant decrease in GC velocity dispersion at small projected radii compared to the smooth stars —
+    a direct kinematic signature of dynamical-friction-driven orbital circularisation and mass segregation.
+  </figcaption>
+</figure>
+
+<h3>Implications and Caveats</h3>
+
+<p>
+Our results place UDG1 firmly in the <strong>dark-matter-poor</strong> territory of the galaxy-halo parameter space, making it a dramatic outlier — \(\sim 2-3\sigma\) from the scaling relations — regardless of the assumed halo profile shape. This is consistent with UDG1 being a <strong>failed galaxy</strong> that formed the majority of its stellar mass in a short, intense burst of star formation early in its history, quenching itself before building up a normal stellar-to-halo-mass ratio. The low halo concentration is also unusual: concentrations below the cosmological average at the same virial mass are expected in high-spin, recently-formed or tidally-distorted halos.
+</p>
+
+<p>
+An important caveat is that our analysis assumes a <strong>static host halo</strong>, whereas UDG1 is in reality a satellite of the NGC5846 galaxy group, located \(\sim 164\) kpc in projection from the central group galaxy. External tidal forces from the host group could potentially influence both the GC orbits and the UDG1 halo structure. However, the tidal radius imposed by the group on UDG1 is \(\sim 6 R_e\), much larger than the region probed by the GCs, so this effect is unlikely to dominate within \(2 R_e\). More broadly, we <strong>caution against naively applying the GC-abundance-halo-mass relation to UDGs</strong>: because UDGs are structurally and dynamically extreme systems with formation histories that may differ fundamentally from those of normal galaxies, the calibrated \(N_\mathrm{GC}$--$M_\mathrm{halo}\) relation does not reliably extrapolate to this population.
+</p>
+
+<p>
+The GCevo model developed in this work is publicly available and generally applicable to any GC-rich dwarf galaxy exhibiting radial trends in its GC properties, providing a new avenue for constraining the dark matter halos of some of the most challenging systems in galaxy formation.
+</p>
+
+<hr>
+
+<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
