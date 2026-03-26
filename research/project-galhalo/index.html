@@ -1,0 +1,193 @@
+---
+layout: default
+title: Galaxy-Halo Connection
+---
+
+<h1>Galaxy–Halo Connection</h1>
+
+<hr>
+
+<p>
+How do the structural properties of dark matter (DM) halos shape the morphologies of the galaxies they host? This series of papers works toward a comprehensive, quantitative answer — developing new tools for kinematic morphological decomposition, measuring an exhaustive set of halo structural parameters, and applying statistical regression methods to uncover the complex, multi-dimensional relationships between galaxy morphology and halo structure.
+</p>
+
+<hr>
+
+<h2>Paper I: A Running Threshold for Thin Discs and Size Predictors from the Dark Sector</h2>
+
+<p>
+  <em>Liang, J., Jiang, F., Mo, H., Benson, A., Dekel, A., Tavron, N., Hopkins, P. F., Ho, L. C. 2025, MNRAS, 541, 2304.
+  [<a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.541.2304L/abstract" target="_blank">ADS</a>]
+  [<a href="https://arxiv.org/abs/2403.14749" target="_blank">arXiv</a>]
+  [<a href="https://github.com/JinningLianggithub/MorphDecom" target="_blank">Code: MorphDecom</a>]</em>
+</p>
+
+<h3>Motivation</h3>
+
+<p>
+Galaxies exhibit dramatic morphological diversity — spanning two orders of magnitude in size at fixed stellar mass, ranging from large bulgeless discs to compact ellipticals. Understanding this diversity in terms of host DM halo properties is a central question in galaxy formation theory. However, progress has been hindered by a fundamental methodological problem: most existing kinematic decomposition schemes rely on <strong>fixed, arbitrary thresholds</strong> in orbital circularity to separate thin discs, thick discs, bulges, and stellar haloes. Different authors use different values, making comparisons across simulations or redshifts unreliable.
+</p>
+
+<h3>A New Morphological Decomposition Scheme</h3>
+
+<p>
+We introduce a new, minimally arbitrary morphological decomposition pipeline applied to the <strong>TNG50</strong> cosmological simulation. Our method builds on the energy-based framework of Zana et al. (2022) — detecting a physically motivated local minimum in the binding energy distribution to separate the stellar halo from the inner galaxy — and significantly improves upon it by replacing the constant circularity threshold for disc separation with a data-driven approach. Specifically, we apply the <strong>Gaussian Mixture Models (GMM)</strong> algorithm in the 3D space of orbital circularity \(\eta\), polarity \(\epsilon\), and normalized binding energy \(e_b\) to robustly identify the intersection point between the thin and thick disc populations. This intersection, \(\eta_\mathrm{cut}\), emerges from the data itself rather than being imposed by hand.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-galhalo/fig1.png"
+       alt="Illustration of morphological decomposition method"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 1.</strong> Illustration of the new decomposition method applied to a Milky Way-mass disc galaxy at \(z=0\).
+    Upper panels: distributions of specific binding energy \(e_b\) (left) and orbital circularity \(\eta\) (middle and right),
+    showing how the galaxy is separated into bulge, stellar halo, thin disc, and thick disc using the detected energy threshold
+    \(e_\mathrm{cut}\) and circularity threshold \(\eta_\mathrm{cut}\) from GMM. Lower panels: face-on and edge-on stellar
+    surface density maps of the four components.
+  </figcaption>
+</figure>
+
+<h3>A Characteristic Mass Scale for Disc Settlement</h3>
+
+<p>
+A key finding from applying this method across the full TNG50 sample at \(z = 0, 1, 2, 4\) is that both the energy threshold \(e_\mathrm{cut}\) and the circularity threshold \(\eta_\mathrm{cut}\) vary <strong>systematically with halo mass and redshift</strong> — they are not constants. Strikingly, \(\eta_\mathrm{cut}\) peaks near the Milky Way halo mass scale (\(M_\mathrm{vir} \sim 10^{12}\,M_\odot\)), nearly independently of redshift. This mass scale coincides with the characteristic mass at which cosmological simulations predict disc settlement via gas-rich compaction (Dekel et al. 2020), and our large statistical sample of TNG50 confirms and extends this picture. Using a constant \(\eta_\mathrm{cut} = 0.7\) — as is standard in the literature — systematically overestimates the thin disc fraction for Milky Way-mass galaxies and underestimates it for dwarfs, especially at high redshift.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-galhalo/fig2.png"
+       alt="Running thresholds ecut and ηcut vs halo mass"
+       style="max-width: 90%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 2.</strong> The energy threshold \(e_\mathrm{cut}\) (upper) and orbital-circularity threshold \(\eta_\mathrm{cut}\)
+    (lower) as functions of galaxy stellar mass (left) or DM halo mass (right), at different redshifts.
+    Both thresholds vary systematically with mass and redshift, peaking near the Milky Way halo mass scale
+    \(M_\mathrm{vir} \sim 10^{11.5-12}\,M_\odot\) — the characteristic mass for disc settlement. The commonly used constant
+    threshold \(\eta_\mathrm{cut} = 0.7\) (grey dashed line) is shown for reference.
+  </figcaption>
+</figure>
+
+<h3>Galaxy Size and Its Halo Predictors</h3>
+
+<p>
+Beyond morphological decomposition, we revisit the question of which DM halo properties best predict disc size. Focusing on disc-dominated galaxies (\(f_\mathrm{disc} > 0.5\)) in TNG50, we find that the half-mass radius \(r_{1/2}\), normalised by the virial radius \(R_\mathrm{vir}\), correlates with three secondary halo parameters beyond virial mass: a <strong>positive correlation with halo spin</strong> \(\lambda\) (stronger than found in higher-resolution zoom-in simulations, but weaker than the classical \(r_{1/2} \propto \lambda R_\mathrm{vir}\) scaling), an <strong>anticorrelation with halo concentration</strong> \(c\) (captured approximately by a \(c^{-0.7}\) scaling), and a weaker positive correlation with the mass accretion rate parameter \(\beta - \gamma\). The concentration dependence is not purely a baryonic effect — it persists even when concentration is measured from the matched dark-matter-only simulation, at least for dwarf-mass systems.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-galhalo/fig3.png"
+       alt="Galaxy compactness vs halo spin, concentration, and MAH parameter"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 3.</strong> Galaxy compactness \(r_{1/2}/R_\mathrm{vir}\) as a function of halo spin \(\lambda\) (left),
+    halo concentration \(c\) (middle), and mass-assembly-history parameter \(\beta - \gamma\) (right), for disc-dominated
+    central galaxies in different halo mass bins at \(z = 0\). Spearman correlation coefficients \(R\) and \(p\)-values
+    are quoted. Disc size correlates positively with spin and negatively with concentration, and galaxies in more
+    actively accreting halos tend to be larger.
+  </figcaption>
+</figure>
+
+<p>
+We also find that disc mass fraction \(f_\mathrm{disc}\) correlates positively with the DM halo 3D axis ratio \(q\) — more spherical, relaxed halos host more disc-dominated galaxies — and that disc development is enhanced in denser cosmic-web environments (knots and filaments), consistent with the need for both a stable gravitational environment and a continuous gas supply. The decomposition pipeline is publicly available at <a href="https://github.com/JinningLianggithub/MorphDecom" target="_blank">MorphDecom</a>.
+</p>
+
+<hr>
+
+<h2>Paper II: Predicting Disk Structure from Dark-Matter Halo Properties</h2>
+
+<p>
+  <em>Liang, J., Jiang, F., Mo, H., Benson, A., Hopkins, P. F., Dekel, A., Ho, L. C. 2026, submitted to ApJ.
+  [<a href="https://ui.adsabs.harvard.edu/abs/2025arXiv251213822L/abstract" target="_blank">ADS</a>]
+  [<a href="https://arxiv.org/abs/2512.13822" target="_blank">arXiv</a>]
+  [<a href="https://github.com/JinningLianggithub/Gal-halo_Symbolic-regression" target="_blank">Code: Symbolic Regression Pipeline</a>]</em>
+</p>
+
+<h3>Motivation</h3>
+
+<p>
+Paper I established correlations between individual halo properties and disc size. But which combination of halo properties is most predictive overall? Can disc thickness — a quantity never previously linked to halo properties — also be inferred from the dark sector? And can we derive simple, accurate empirical formulae that semi-analytical galaxy formation models can directly use? Paper II addresses all of these questions, leveraging a comprehensive set of 37 halo structural parameters and a suite of regression tools.
+</p>
+
+<h3>Analysis Framework</h3>
+
+<p>
+Using the morphological decomposition developed in Paper I, we measure 9 disc structural quantities — scale radii, scale heights, and mass fractions of the total, thin, and thick disc — for TNG50 galaxies across \(0 \leq z \leq 4\). We pair these with 37 halo properties measured from both the full-physics (hydro) and matched dark-matter-only (DMO) simulations, spanning density structure (concentration, Einasto shape index), angular momentum (global and inner spin), 3D shape, mass assembly history (MAH), and large-scale environment. A three-stage analysis pipeline is then applied: <strong>Random Forest (RF)</strong> regression to assess raw predictability, <strong>SHAP analysis</strong> to identify and rank the most influential halo parameters, and <strong>Symbolic Regression (SR)</strong> via PySR to derive compact analytic expressions.
+</p>
+
+
+<h3>Key Results</h3>
+
+<h4>1. Disc properties are highly predictable from halo parameters alone</h4>
+
+<p>
+RF regression achieves \(R^2 = 0.63\) for disc half-mass size and \(R^2 = 0.83\) for disc scale height, using halo properties from the hydro simulation — the latter being a remarkable result, as disc height has never previously been linked to halo properties. Lower-mass halos (\(M_\mathrm{vir} < 10^{11.6}\,M_\odot\)) yield higher prediction accuracy than massive halos. Predictions based on hydro halo measurements consistently outperform those from DMO halos, reflecting the imprint of baryonic processes on the inner halo structure.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-galhalo/fig3_p2.png"
+       alt="RF and SR predictions for disc compactness"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 3.</strong> Performance of the regression models for disc compactness \(R_{1/2,\mathrm{Disk}}/R_\mathrm{vir}\),
+    for galaxies with significant disc components (\(f_\mathrm{Disk} > 0.3\)). Left column: comparison of RF (contours)
+    and SR (dashed curves) predictions against test data for hydro (blue) and DMO (red) halos, in three halo mass bins.
+    Right columns: SHAP scores showing the relative importance of the top 10 halo features for each mass bin.
+  </figcaption>
+</figure>
+
+<h4>2. The most important halo parameters for disc structure</h4>
+
+<p>
+SHAP analysis reveals that different aspects of disc structure are regulated by different halo properties. For disc compactness (half-mass size), the most informative parameters are halo <strong>concentration</strong> \(c\), <strong>Einasto shape index</strong> \(\alpha\), inner-halo spin \(\lambda_\mathrm{inner}\), and global spin \(\lambda\). For disc scale height, halo mass and redshift dominate, followed by concentration and spin. Notably, \(\alpha\) is highly predictive only when measured from the hydro simulation — in the DMO run, it carries almost no predictive power — revealing that the apparent connection between disc size and \(\alpha\) arises from <strong>baryonic restructuring of the inner halo</strong> rather than a primordial link. When the disc is more extended, it causes more halo contraction, driving \(\alpha_\mathrm{hydro}\) lower relative to \(\alpha_\mathrm{DMO}\).
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-galhalo/fig4_p2.png"
+       alt="RF and SR predictions for disc thickness"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 4.</strong> Performance of regression models for disc thickness \(Z_{1/2,\mathrm{Disk}}/R_\mathrm{vir}\).
+    RF regression achieves \(R^2 = 0.83\) using hydro halo measurements — consistently higher than for disc compactness —
+    indicating that halo properties constrain disc height even more tightly than disc size. SHAP rankings (lower panels)
+    show that halo mass, concentration, spin, and accretion rate are the dominant predictors.
+  </figcaption>
+</figure>
+
+<h4>3. New SR-based size predictors outperform all previous relations</h4>
+
+<p>
+SR produces compact empirical formulae mapping halo parameters to disc properties. These new prescriptions achieve Spearman correlation coefficients of \(\mathcal{R} \gtrsim 0.6\) for disc size — significantly higher than the classical Mo et al. (1998) spin-based model (\(\mathcal{R} \sim 0.5\)), the Kravtsov (2013) \(r_{1/2} = 0.02 R_\mathrm{vir}\) scaling (\(\mathcal{R} \sim 0.4\)), and the Jiang et al. (2019) concentration-based model (\(\mathcal{R} \sim 0.5\)). The SR relations exhibit substantially reduced scatter and lie much closer to the 1:1 line, especially for compact discs where previous prescriptions systematically overpredict size.
+</p>
+
+<figure style="text-align:center; margin: 2em 0;">
+  <img src="/assets/images/project-galhalo/fig6_p2.png"
+       alt="Comparison of disc size models"
+       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
+  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+    <strong>Figure 6.</strong> Comparison of models relating disc size to halo properties. From left to right: our
+    SR-based model \(R_{1/2,\mathrm{Disk}} = f(X) R_\mathrm{vir}\); the Kravtsov (2013) relation
+    \(r_{1/2} = 0.02 R_\mathrm{vir}\); the Mo et al. (1998) spin-based scaling \(r_{1/2} = 0.5\lambda R_\mathrm{vir}\);
+    and the Jiang et al. (2019) concentration-based model. Our SR models provide the highest Spearman correlations
+    and the lowest scatter, outperforming all previous prescriptions.
+  </figcaption>
+</figure>
+
+<h4>4. Disc compactness shows a mass-dependent redshift evolution</h4>
+
+<p>
+Low-mass halos (\(M_\mathrm{vir} \lesssim 2 \times 10^{11}\,M_\odot\)) show a strong increase in disc compactness \(R_{1/2}/R_\mathrm{vir}\) towards high redshift — from \(\sim 0.02\) at \(z = 0\) to \(\sim 0.08\) at \(z = 4\). This can be understood because the physical star-forming radius stays roughly constant while the virial radius shrinks rapidly with increasing redshift, driven by the rising critical density of the Universe. In contrast, massive halos show the opposite trend: at high redshift, frequent gas-rich mergers and concentrated starbursts produce compact stellar components, so the disc size relative to the halo is actually smaller at high \(z\). These contrasting trends reveal that disc compactness encodes qualitatively different physics in the low-mass and high-mass regimes.
+</p>
+
+<h4>5. Disc thickness is primarily driven by halo mass and assembly history</h4>
+
+<p>
+Discs are thinnest — most flattened relative to their virial radii — near the Milky Way mass scale (\(M_\mathrm{vir} \sim 10^{12}\,M_\odot\)), and thicken toward both lower and higher masses. At any fixed mass, discs are systematically thicker at higher redshift. More recently and rapidly accreting halos host thicker discs at all redshifts, consistent with disc heating by mergers and accretion events. Disc height and disc size are tightly correlated, implying that the halo parameters setting the radial extent of the disc also regulate its vertical thickness. This explains why halo properties predict disc height even more accurately than disc size.
+</p>
+
+<h3>Empirical Prescriptions</h3>
+
+<p>
+All SR-based analytic prescriptions for stellar mass, SFR, galaxy size, disc size, disc height, and disc mass fraction — for both hydro and DMO halos — are provided in Tables A.1 and A.2 of the paper, and are available at <a href="https://github.com/JinningLianggithub/Gal-halo_Symbolic-regression" target="_blank">this GitHub repository</a>. These offer computationally efficient tools for semi-analytical and empirical models wishing to populate DM haloes with realistic galaxy morphologies.
+</p>
+
+<hr>
+
+<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
