@@ -11,9 +11,14 @@ My published papers can be seen in [ORCID](https://orcid.org/0000-0001-8405-2921
 ## First author papers
 
 
+- **Jinning Liang**, C. G. Lacey, et al. 2025, <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260312322L/abstract">Submitted</a>: Simulating AGN wind feedback with variable feedback efficiencies in idealised disc galaxies
+
+- **Jinning Liang**, F. Jiang, H. J. Mo, et al. 2026, <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv251213822L/abstract">ApJ</a>: Connection between galaxy morphology and dark-matter halo structure II:
+predicting disk structure from dark-matter halo properties
+
 - F. Jiang (co-first author), **Jinning Liang** (co-first author) et al. 2025, <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250401070J/abstract">Submitted</a>: Formation and Environmental Context of Giant Bulgeless Disk Galaxies in the Early Universe: Insights from Cosmological Simulations
 
-- **Jinning Liang**, F. Jiang, Mo. H et al. 2024, <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240314749L/abstract">Submitted</a>: Connection between galaxy morphology and dark-matter halo structure I: a
+- **Jinning Liang**, F. Jiang, H. J. Mo, et al. 2025, <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.541.2304L/abstract">MNRAS</a>: Connection between galaxy morphology and dark-matter halo structure I: a
 running threshold for thin discs and size predictors from the dark sector
 
 - **Jinning Liang**, F. Jiang et al. 2024, <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...964...53L/abstract">ApJ</a>: Constrain the Dark Matter Distribution of NGC5846-UDG1 Using its Globular Cluster Population
@@ -27,6 +32,6 @@ running threshold for thin discs and size predictors from the dark sector
 ## Co-authored papers
 
 
-- Zou. S, Simcoe. R.A., Petitjean. P, Péroux. C, Champagne. J, Wang. F, **Jinning Liang** et al.,  et al. 2025, <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250214705Z/abstract">Submitted</a>: Disturbed cold gas in galaxy and structure formation
+- Zou. S, Simcoe. R.A., Petitjean. P, Péroux. C, Champagne. J, Wang. F, **Jinning Liang** et al., 2025, <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...994L..53Z/abstract">ApJL</a>: Disturbed cold gas in galaxy and structure formation
 
 - E. Gjergo, A.G. Sorokin, A. Ruth, E. Spitoni, F. Matteucci, X. Fan, **Jinning Liang** et al. 2023, <a href="https://ui.adsabs.harvard.edu/abs/2023ApJS..264...44G/abstract">ApJS</a>: GalCEM I - A Publicly-Available Detailed Isotopic Chemical Evolution Code
