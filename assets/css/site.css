@@ -6,7 +6,7 @@
 /* Hallmark · waive 77 · the statement under the hero is one 30-word sentence from the About text, set at 40px in three lines · at the section size it runs to five lines and outweighs the research grid below it */
 /* Hallmark · waive 44c · the About page is a single Split of the three bio paragraphs beside the portrait, taller than one screen · the bio is the owner's text and is kept whole */
 /* Hallmark · waive 83 · the Research page is a grid of six thumbnails from the owner's own papers · it is the portfolio of the work, not stock photography */
-/* Hallmark · waive 25 · the research articles set their prose 44rem wide, about 95 characters a line · the owner asked for a wider column for the long scientific text */
+/* Hallmark · waive 25 · the research articles set their prose 50rem wide, about 105 characters a line · the owner asked for a wider column for the long scientific text */
 /* Hallmark · waive 79 · Banner pages and research articles open with a short page head and the list or the article begins right beneath it, above the fold · the space the check counts is filled by that content */
 /* Hallmark · waive 75 · the only text under 12px is MathJax subscript glyphs inside formulas on the research articles · the formula sizes are set by MathJax from the 18px body */
 /* Hallmark · dismissed F15 · 1040px is the figure measure inside a research article, every section still sits in the one 1440px container */
@@ -15,7 +15,7 @@
 
 /* ---------- Page frame ---------- */
 
-:root { --measure: 44rem; }
+:root { --measure: 50rem; }
 body { color: var(--color-ink-2); }
 h1, h2, h3, h4 { color: var(--color-ink); }
 .num { font-family: var(--font-outlier); font-variant-numeric: tabular-nums; }
