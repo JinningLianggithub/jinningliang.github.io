@@ -1,11 +1,11 @@
 # Publications. To add a paper, copy a block and edit it.
 # "Jinning Liang" is set in bold automatically wherever it appears in authors.
-# link_text is what the link shows (the journal, or "Submitted").
+# link_text is what the venue column shows (the journal, or the paper's status).
 
 first_author:
   - authors: Jinning Liang, C. G. Lacey, et al.
-    year: 2025
-    link_text: Submitted
+    year: 2026
+    link_text: Accepted by MNRAS
     url: https://ui.adsabs.harvard.edu/abs/2026arXiv260312322L/abstract
     title: Simulating AGN wind feedback with variable feedback efficiencies in idealised disc galaxies
 
@@ -31,7 +31,7 @@ first_author:
     year: 2024
     link_text: ApJ
     url: https://ui.adsabs.harvard.edu/abs/2024ApJ...964...53L/abstract
-    title: Constrain the Dark Matter Distribution of NGC5846-UDG1 Using its Globular Cluster Population
+    title: "Constrain the Dark Matter Distribution of Ultra-diffuse Galaxies with Globular-Cluster Mass Segregation: A Case Study with NGC5846-UDG1"
 
   - authors: Jinning Liang, E. Gjergo & X. Fan
     year: 2023
@@ -46,6 +46,24 @@ first_author:
     title: Deflection and Gravitational lensing of null and timelike signals in the Kiselev black hole spacetime in the weak field limit
 
 co_author:
+  - authors: B. S. Kalita et al. (including Jinning Liang)
+    year: 2026
+    link_text: Submitted to ApJ
+    url: https://arxiv.org/abs/2610.03867
+    title: "SCALES. II. The Internal Composition of Giant Star-Forming Clumps at z = 1 – 4"
+
+  - authors: B. S. Kalita et al. (including Jinning Liang)
+    year: 2026
+    link_text: Submitted to ApJ
+    url: https://arxiv.org/abs/2610.03866
+    title: "SCALES. I. Bridging lensed Clump – Giant Clump Scales in Lensed Galaxies at z = 1 – 4"
+
+  - authors: J. Luo, F. Jiang, Jinning Liang, et al.
+    year: 2026
+    link_text: Submitted to ApJL
+    url: https://arxiv.org/abs/2609.27460
+    title: Ubiquitous nuclear disk and bars embedded in massive galaxies in the cosmic morning
+
   - authors: Zou. S, Simcoe. R.A., Petitjean. P, Péroux. C, Champagne. J, Wang. F, Jinning Liang et al.
     year: 2025
     link_text: ApJL

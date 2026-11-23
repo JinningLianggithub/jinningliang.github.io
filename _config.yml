@@ -1,5 +1,5 @@
 title: Jinning Liang
-description: "Jinning Liang, PhD student at the Kavli Institute for Astronomy and Astrophysics, Peking University. Research on AGN feedback, galaxies and dark-matter halos with cosmological simulations."
+description: "Jinning Liang, PhD candidate at the Kavli Institute for Astronomy and Astrophysics, Peking University. Research on AGN feedback, galaxies and dark-matter halos with cosmological simulations."
 email: jinningliangastro@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jinningliang.com"
@@ -8,7 +8,7 @@ github_username: JinningLianggithub
 # Shown in the header, the footer and on the home page
 author:
   name: Jinning Liang
-  role: PhD Student
+  role: PhD Candidate
   affiliation: Kavli Institute for Astronomy and Astrophysics, Peking University
 
 # Top navigation, in order
