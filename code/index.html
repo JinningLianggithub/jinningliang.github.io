@@ -1,0 +1,22 @@
+---
+layout: default
+title: Code
+---
+{% comment %}The repositories live in _data/code.yml{% endcomment %}
+
+<section class="page">
+    <div class="container">
+        <header class="page-head">
+            <h1>Code</h1>
+            <p class="lead">The code that I developed or built can be seen below:</p>
+        </header>
+        <ul class="repo-rows">
+            {% for repo in site.data.code %}
+            <li class="repo-row">
+                <a class="repo-row__name" href="{{ repo.url }}" target="_blank" rel="noopener">{{ repo.name }}</a>
+                <p class="repo-row__desc">{{ repo.description }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

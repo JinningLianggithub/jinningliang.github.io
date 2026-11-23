@@ -1,0 +1,39 @@
+# Research projects, in the order they appear on the site.
+# Each entry links to its page in /research/<folder>/.
+# venue and year come from the paper(s) cited on that project's page.
+
+- title: Simulating AGN Feedback
+  url: /research/project-AGN/
+  image: /assets/images/project-AGN.png
+  venue: MNRAS, submitted
+  year: 2026
+
+- title: Galaxy-Halo Connection
+  url: /research/project-galhalo/
+  image: /assets/images/project-galhalo.png
+  venue: MNRAS and ApJ
+  year: 2025, 2026
+
+- title: High-z Disk Galaxies
+  url: /research/project-highzdisk/
+  image: /assets/images/project-highzdisk.png
+  venue: Nature Astronomy, submitted
+  year: 2025
+
+- title: Dwarf Galaxies and Dark Matter
+  url: /research/project-UDG/
+  image: /assets/images/project-UDG.png
+  venue: ApJ
+  year: 2024
+
+- title: Galactic Chemical Evolution
+  url: /research/project-GCE/
+  image: /assets/images/project-GCE.png
+  venue: MNRAS
+  year: 2023
+
+- title: Gravitational Lensing Computation
+  url: /research/project-GL/
+  image: /assets/images/project-GL.png
+  venue: Class. Quantum Grav.
+  year: 2022

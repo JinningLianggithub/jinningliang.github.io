@@ -1,0 +1,14 @@
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }}, home">{{ site.author.name }}</a>
+        <nav class="site-nav" aria-label="Main">
+            <ul>
+                {% for item in site.nav %}
+                {% assign is_current = false %}
+                {% unless item.external %}{% if page.url contains item.url %}{% assign is_current = true %}{% endif %}{% endunless %}
+                <li><a href="{{ item.url | relative_url }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}{% if is_current %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

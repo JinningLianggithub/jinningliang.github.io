@@ -1,15 +1,54 @@
 title: Jinning Liang
+description: "Jinning Liang, PhD student at the Kavli Institute for Astronomy and Astrophysics, Peking University. Research on AGN feedback, galaxies and dark-matter halos with cosmological simulations."
 email: jinningliangastro@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://jinningliang.com"
 github_username: JinningLianggithub
 
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+# Shown in the header, the footer and on the home page
+author:
+  name: Jinning Liang
+  role: PhD Student
+  affiliation: Kavli Institute for Astronomy and Astrophysics, Peking University
 
-# Site settings
+# Top navigation, in order
+nav:
+  - title: About
+    url: /about/
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: Code
+    url: /code/
+  - title: CV
+    url: /assets/files/CV.pdf
+    external: true
+
+# Profile links, used in the footer, on the home page and on the About page
+links:
+  - title: Email
+    url: mailto:jinningliangastro@gmail.com
+  - title: ORCID
+    url: https://orcid.org/0000-0001-8405-2921
+  - title: GitHub
+    url: https://github.com/JinningLianggithub
+  - title: Google Scholar
+    url: https://scholar.google.com/citations?user=1prsaO4AAAAJ&hl=en
+
+# Build settings
 markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "research"
+    values:
+      math: true
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -18,3 +57,5 @@ exclude:
   - node_modules
   - package.json
   - package-lock.json
+  - .hallmark
+  - .jekyll-cache

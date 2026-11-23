@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: project
 title: Dwarf Galaxies and Dark Matter
 ---
 
-<h1>Dwarf Galaxies and Dark Matter</h1>
 
 <hr>
 
@@ -33,11 +32,9 @@ The ultra-diffuse galaxy NGC5846-UDG1 hosts ~50 globular clusters for a stellar 
 Each GC orbits in a composite host potential (dark matter + stars) under the influence of Chandrasekhar dynamical friction:
 </p>
 
-<span style="font-family: serif;">
 \[
 \mathbf{a}_{\mathrm{DF}} = -4\pi G^2 m \sum_i \ln\Lambda_i\,\rho_i(r)\,\frac{F(&lt;V_i)}{V_i^3}\,\mathbf{V}_i
 \]
-</span>
 
 <p>
 We adopt the physically-motivated Coulomb logarithm of Petts et al. (2015), which naturally captures the <strong>core-stalling effect</strong> in cored halos and avoids the overestimated orbital decay from the simplistic \(\ln(M/m)\) prescription widely used for satellite galaxies.
@@ -47,11 +44,9 @@ We adopt the physically-motivated Coulomb logarithm of Petts et al. (2015), whic
 Over 10 Gyr, GCs evolve in mass and structure under tidal stripping and two-body relaxation. We derive a unified structural evolution equation that couples both processes:
 </p>
 
-<span style="font-family: serif;">
 \[
 \frac{\mathrm{d}\rho_{1/2}}{\rho_{1/2}} = \left[\alpha\!\left(5 - \frac{3}{f_t}\right)\frac{\xi_t}{\tau_{\mathrm{dyn}}} + \left(5 - \frac{3}{f_r}\right)\frac{\xi_e}{\tau_r}\right]\mathrm{d}t
 \]
-</span>
 
 <p>
 where \(\xi_t\) and \(\xi_e\) are the mass fractions beyond the tidal radius and above the escape velocity, \(\tau_{\mathrm{dyn}}\) and \(\tau_r\) are the host dynamical and internal relaxation timescales, and the coupling parameters \(f_t\) and \(f_r\) are calibrated against N-body tidal tracks and Hénon's classical result, respectively. The evolution is strongly mass-dependent: low-mass clusters (\(m \lesssim 10^{4.5}\,M_\odot\)) expand and dissolve, intermediate-mass clusters expand modestly, and massive clusters (\(m \gtrsim 10^6\,M_\odot\)) remain largely intact — naturally producing the observed GC mass function peaked at \(\sim 10^5\,M_\odot\). Full derivations of all model components are given in the paper (Sections 2.1–2.3).
@@ -62,11 +57,10 @@ where \(\xi_t\) and \(\xi_e\) are the mass fractions beyond the tidal radius and
 The mass-size evolution is strongly mass-dependent, as illustrated below. The most massive clusters (\(m \gtrsim 10^6\,M_\odot\)) barely evolve in mass or size over 10 Gyr. Intermediate-mass clusters (\(m \approx 10^{5\text{–}6}\,M_\odot\)) primarily expand due to two-body relaxation, with marginal mass loss. Low-mass clusters (\(m \lesssim 10^{4.5}\,M_\odot\)) expand rapidly until tidal truncation takes effect, leading to quick mass loss and eventual dissolution. These mass-dependent behaviours work together to shape the evolved GC mass function — peaked at \(m \sim 10^5\,M_\odot\) — and ensure that mass segregation arises naturally, since massive GCs remain intact and always experience the strongest dynamical friction.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-UDG/fig3.png"
-       alt="Mass-size evolution of star clusters over 10 Gyr"
-       style="max-width: 60%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Mass-size evolution of star clusters over 10 Gyr" class="fig-60" loading="lazy">
+  <figcaption>
     <strong>Figure 3.</strong> Mass-size evolution of star clusters over 10 Gyr. Clusters are initialised with sizes following the observed size-mass relation of young star clusters (Brown &amp; Gnedin 2021, blue dashed line) and circular orbits at \(r = 5\) kpc in a host potential with an NFW halo (\(M_h = 10^{12}\,M_\odot\), \(c = 10\)). Colour encodes time from 0 (blue) to 10 Gyr (red). Massive clusters remain nearly intact, while low-mass clusters expand and are tidally disrupted.
   </figcaption>
 </figure>
@@ -81,11 +75,10 @@ The mass-size evolution is strongly mass-dependent, as illustrated below. The mo
 Using MCMC with both NFW (cuspy) and Burkert (cored) halo profiles, we find posterior-mode halo masses of \(M_h \approx 10^{9.1}\,M_\odot\) (NFW) and \(10^{9.0}\,M_\odot\) (Burkert), with concentrations well below the cosmological average. This places UDG1 firmly in the dark-matter-poor regime (\(M_\star/M_h \sim 0.1\)), consistent with the theoretical picture that UDGs form in low-concentration halos puffed up by supernovae feedback.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-UDG/fig4.png"
-       alt="Posterior distributions for NFW halo"
-       style="max-width: 55%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Posterior distributions for NFW halo" class="fig-55" loading="lazy">
+  <figcaption>
     <strong>Figure 4.</strong> Posterior distributions assuming an NFW host halo: \(\log(M_h/M_\odot) = 8.9^{+0.7}_{-0.5}\), \(\log c = 0.78^{+0.38}_{-0.31}\), \(r_0 = 3.2^{+1.2}_{-1.4}\) kpc. The anti-correlation between \(M_h\) and \(c\) reflects the requirement for an appropriate dynamical friction strength.
   </figcaption>
 </figure>
@@ -96,11 +89,10 @@ Using MCMC with both NFW (cuspy) and Burkert (cored) halo profiles, we find post
 Model realizations with the best-fit parameters simultaneously reproduce the observed radial mass segregation, GC mass function, size distribution, and size-mass relation.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-UDG/fig5.png"
-       alt="Model realization compared to data for NFW halo"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Model realization compared to data for NFW halo" loading="lazy">
+  <figcaption>
     <strong>Figure 5.</strong> Model realization with best-fit NFW parameters compared to data. Diagonal panels show one-point distributions of mass \(m\), size \(l_{1/2}\), and projected distance \(R\). Off-diagonal panels show bivariate distributions. Red/grey circles are model/observed medians in three mass bins with 16th–84th percentile error bars. The clear trend of mass segregation in the \(R\text{–}m\) plane is well reproduced.
   </figcaption>
 </figure>
@@ -111,11 +103,10 @@ Model realizations with the best-fit parameters simultaneously reproduce the obs
 UDG1 deviates by \(\sim 2\text{–}3\sigma\) from the GC-abundance–halo-mass relation, the stellar-mass–halo-mass relation, and the concentration–mass relation. This warns against naively using the GC-abundance relation to estimate halo masses for UDGs, and supports the flattening of this relation at the low-mass end.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-UDG/fig8.png"
-       alt="UDG1 on scaling relations"
-       style="max-width: 55%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="UDG1 on scaling relations" class="fig-55" loading="lazy">
+  <figcaption>
     <strong>Figure 8.</strong> UDG1 compared to empirical scaling relations. <em>Top</em>: GC number vs. virial mass. <em>Middle</em>: stellar mass vs. virial mass. <em>Bottom</em>: halo concentration vs. virial mass. UDG1 is a \(\sim 2\text{–}3\sigma\) outlier in all three panels.
   </figcaption>
 </figure>
@@ -126,11 +117,10 @@ UDG1 deviates by \(\sim 2\text{–}3\sigma\) from the GC-abundance–halo-mass r
 The most striking difference between cuspy and cored profiles is in nuclear star cluster (NSC) formation. In cuspy NFW halos with \(M_h \lesssim 10^{9.5}\,M_\odot\), massive GCs sink to the centre and coalesce into an NSC. In cored halos, core-stalling prevents this. Since UDG1 is non-nucleated, our results favour a cored, low-mass halo — consistent with core formation via supernovae-driven potential fluctuations. The model also predicts lower GC velocity dispersions than the smooth stellar background due to dynamical friction, in agreement with available kinematic measurements (Müller et al. 2020; Forbes et al. 2021). Further details on the velocity dispersion profiles, orbital eccentricities, stripped fractions, and comparison with previous models are presented in the paper (Section 4).
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-UDG/fig10.png"
-       alt="Nuclear star cluster fraction"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Nuclear star cluster fraction" loading="lazy">
+  <figcaption>
     <strong>Figure 10.</strong> <em>Upper</em>: NSC mass fraction vs. halo mass for NFW (left) and Burkert (right) profiles. Cuspy halos readily form NSCs at low halo masses; cored halos generally do not. <em>Lower</em>: stripped mass fraction of GCs. The inset compares the best-fit density profiles, showing the Burkert halo is actually steeper than NFW where most GCs reside.
   </figcaption>
 </figure>
@@ -142,5 +132,3 @@ We have demonstrated that radial mass segregation of globular clusters can const
 </p>
 
 <hr>
-
-<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">

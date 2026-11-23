@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: project
 title: Galactic Chemical Evolution
 ---
 
-<h1>Galactic Chemical Evolution</h1>
 
 <hr>
 
@@ -47,11 +46,10 @@ For low-to-intermediate mass stars and Type Ia supernovae, different yield tabul
 Each yield group can reproduce the median [X/Fe]–[Fe/H] trends for most elements up to Zn. However, no single group can match both the observed scatter and standard deviation. Group A best reproduces the median at all metallicities, Group B reproduces roughly half the data, and Group C performs well at low metallicities but underestimates abundances at \(-2.0 \lesssim \mathrm{[Fe/H]} \lesssim 0.0\). The figure below shows the [X/Fe]–[Fe/H] relation for C, N, and O, illustrating how the three groups span different regions of the abundance plane.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-GCE/fig5.png"
-       alt="[X/Fe]-[Fe/H] relations for CNO elements"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="[X/Fe]-[Fe/H] relations for CNO elements" loading="lazy">
+  <figcaption>
     <strong>Figure 5.</strong> The [X/Fe]–[Fe/H] relation for C, N, and O. Each row corresponds to a different yield group (A: solid, B: dashed, C: dotted), with individual models shown in different colours. Observational data from halo stars (royal blue), thick disc (light green), thin disc (pink), and thin-disc-only samples (grey) are overlaid. The models reproduce average trends but span different abundance envelopes depending on the yield prescription.
   </figcaption>
 </figure>
@@ -62,11 +60,10 @@ Each yield group can reproduce the median [X/Fe]–[Fe/H] trends for most elemen
 Evaluating the predicted present-day [X/Fe] at solar [Fe/H] for all 12 elements, we find that the best-performing model from each group reproduces most elemental abundances to within \(\pm 0.15\) dex of solar values, but with characteristic offsets: Group A tends to underestimate C and overestimate Na; Group B underestimates Mg and Al; and Group C overestimates Mn, Ni, and Eu.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-GCE/fig17.png"
-       alt="Present-day abundance ratios for 12 elements"
-       style="max-width: 65%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Present-day abundance ratios for 12 elements" class="fig-65" loading="lazy">
+  <figcaption>
     <strong>Figure 17.</strong> Present-day [X/Fe] abundance ratios (normalised to solar) for all 12 elements as a function of atomic number. Three representative best-performing models are shown (one per group). Horizontal dashed lines mark \(\pm 0.15\) dex from solar. Most elements are reproduced within this range, but systematic offsets differ across groups.
   </figcaption>
 </figure>
@@ -77,11 +74,10 @@ Evaluating the predicted present-day [X/Fe] at solar [Fe/H] for all 12 elements,
 When combining two or three groups, the fraction of reproduced data scatter increases, and the underestimated standard deviation is reduced. However, the combined models also increase the fraction of <em>overestimated</em> scatter and standard deviation, particularly at \(-2.0 \lesssim \mathrm{[Fe/H]} \lesssim 0.0\). This means that a simple averaging or superposition of yield prescriptions cannot fully account for the observed abundance scatter — a realistic mixing of yields requires time- and metallicity-dependent weighting, which goes beyond the scope of one-zone models.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-GCE/fig18.png"
-       alt="Pie chart summary of model performance"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Pie chart summary of model performance" loading="lazy">
+  <figcaption>
     <strong>Figure 18.</strong> Summary pie charts showing the performance of each yield group (A, B, C) across four metallicity bins for all 12 elements. Each concentric shell represents one element; each slice represents one group. The judgement criteria (median, standard deviation, scatter) are encoded by colour and texture: solid = in agreement, dotted = overestimated, striped = underestimated, faint = in disagreement. Group A performs best overall, while all groups struggle with neutron-capture elements (Ba, Eu).
   </figcaption>
 </figure>
@@ -99,5 +95,3 @@ We show that while many yield prescriptions are effective at reproducing median 
 </p>
 
 <hr>
-
-<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">

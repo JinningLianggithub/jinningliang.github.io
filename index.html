@@ -1,13 +1,87 @@
 ---
 layout: default
 title: Home
+body_class: page-home
 ---
 
-<div class="home-content">
-    <div class="text">
-        <p>Stay hungry, stay foolish</p>
+<section class="hero">
+    <div class="container hero__grid">
+        <div class="hero__text">
+            <h1>{{ site.author.name }}</h1>
+            <p class="lead">PhD student at the Kavli Institute for Astronomy and Astrophysics, Peking University.</p>
+            <div class="actions">
+                <a class="btn btn--primary" href="{{ '/research/' | relative_url }}">See my research</a>
+                <a class="btn" href="{{ '/assets/files/CV.pdf' | relative_url }}" target="_blank" rel="noopener">Download CV</a>
+            </div>
+            <ul class="link-list hero__links" aria-label="Profiles and contact">
+                {% for link in site.links %}
+                <li><a href="{{ link.url }}"{% unless link.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ link.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <figure class="hero__visual">
+            <img src="{{ '/assets/images/home.jpg' | relative_url }}" alt="The cosmic web: dark-matter filaments linking bright galaxies" width="2824" height="1648" fetchpriority="high">
+            <figcaption>Stay hungry, stay foolish</figcaption>
+        </figure>
     </div>
-</div>
+</section>
 
-<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<section class="statement">
+    <div class="container statement__grid">
+        <p class="statement__text">My research focuses on active galactic nuclei (AGN), galaxies, dark matter (DM) halos, and the complex relationships among them, using cosmological simulations and semi-analytical models.</p>
+        <p class="statement__more"><a class="text-link" href="{{ '/about/' | relative_url }}">About me</a></p>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="research-head">
+    <div class="container">
+        <div class="head-split">
+            <h2 id="research-head">Research</h2>
+            <p class="head-split__aside"><a class="text-link" href="{{ '/research/' | relative_url }}">All six projects</a></p>
+        </div>
+        <ul class="project-grid">
+            {% for p in site.data.research %}
+            <li>
+                <a class="project" href="{{ p.url | relative_url }}">
+                    <span class="project__figure"><img src="{{ p.image | relative_url }}" alt="" loading="lazy"></span>
+                    <span class="project__title">{{ p.title }}</span>
+                    <span class="project__meta"><span>{{ p.venue }}</span> <span class="num">{{ p.year }}</span></span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="papers-head">
+    <div class="container rows-split">
+        <div class="rows-split__head">
+            <h2 id="papers-head">Recent papers</h2>
+            <p class="rows-split__aside"><a class="text-link" href="{{ '/publications/' | relative_url }}">All publications</a></p>
+        </div>
+        <ol class="paper-list">
+            {% for paper in site.data.publications.first_author limit: 4 %}
+            {% include paper.html paper=paper %}
+            {% endfor %}
+        </ol>
+    </div>
+</section>
+
+<section class="band" aria-labelledby="code-head">
+    <div class="container">
+        <div class="head-split">
+            <h2 id="code-head">Code</h2>
+            <p class="head-split__aside"><a href="https://github.com/JinningLianggithub" target="_blank" rel="noopener">GitHub profile</a></p>
+        </div>
+        <ul class="repo-grid">
+            {% for repo in site.data.code %}
+            <li>
+                <a class="repo" href="{{ repo.url }}" target="_blank" rel="noopener">
+                    <span class="repo__name">{{ repo.name }}</span>
+                    <span class="repo__desc">{{ repo.description }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

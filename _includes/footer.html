@@ -1,0 +1,13 @@
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <div class="site-footer__id">
+            <p class="site-footer__name">{{ site.author.name }}</p>
+            <p class="site-footer__meta">{{ site.author.role }}<br>{{ site.author.affiliation }}</p>
+        </div>
+        <ul class="link-list site-footer__links" aria-label="Profiles and contact">
+            {% for link in site.links %}
+            <li><a href="{{ link.url }}"{% unless link.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ link.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</footer>

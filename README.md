@@ -1,36 +1,28 @@
-# Personal Website
+# jinningliang.com
 
-This is your personal website built with HTML, CSS, and JavaScript, hosted on GitHub Pages.
+Personal website of Jinning Liang, built with Jekyll and deployed to GitHub Pages by the workflow in `.github/workflows/jekyll-gh-pages.yml` on every push to `main`.
 
-## Getting Started
+## Where things live
 
-1. Create a new repository on GitHub with the name `username.github.io` (replace 'username' with your GitHub username)
-2. Clone this repository to your local machine
-3. Push the contents to your GitHub repository
-4. Your website will be live at `https://username.github.io`
+| What | File |
+| --- | --- |
+| Name, role, affiliation, navigation, profile links | `_config.yml` |
+| Publications (first author and co-authored) | `_data/publications.yml` |
+| Research projects shown on the home and Research pages | `_data/research.yml` |
+| Code repositories | `_data/code.yml` |
+| About text | `about/index.html` |
+| One page per research project | `research/project-*/index.html` |
+| CV | `assets/files/CV.pdf` (also reachable at `/cv/`) |
+| Colours and fonts | `assets/css/tokens.css` |
+| Page styles | `assets/css/site.css` (with `base.css`) |
 
-## Features
+## Adding a paper
 
-- Responsive design that works on all devices
-- Modern and clean UI
-- Sections for Home, About, Projects, and Contact
-- Social media integration
-- Customizable color scheme
+Copy a block in `_data/publications.yml` and edit it. `Jinning Liang` is set in bold automatically. The first four first-author papers also appear on the home page.
 
-## Customization
+## Adding a research project
 
-1. Replace "Your Name" with your actual name in the navigation and hero section
-2. Update the content in the About section
-3. Add your projects in the Projects section
-4. Update the social media links in the Contact section
-5. Customize the colors in `styles.css`
+1. Create `research/project-<name>/index.html` with front matter `layout: project` and a `title`.
+2. Add an entry to `_data/research.yml` with its `url`, a thumbnail `image`, `venue` and `year`.
 
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript
-
-## License
-
-This project is open source and available under the MIT License.
+Figures inside a project page are plain `<figure>` blocks. Add `class="fig-65"` (or `fig-55`, `fig-60`, `fig-80`, `fig-90`) to an `<img>` to show it narrower than full width. Maths uses MathJax: `\( ... \)` inline and `\[ ... \]` for display.

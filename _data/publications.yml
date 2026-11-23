@@ -1,0 +1,59 @@
+# Publications. To add a paper, copy a block and edit it.
+# "Jinning Liang" is set in bold automatically wherever it appears in authors.
+# link_text is what the link shows (the journal, or "Submitted").
+
+first_author:
+  - authors: Jinning Liang, C. G. Lacey, et al.
+    year: 2025
+    link_text: Submitted
+    url: https://ui.adsabs.harvard.edu/abs/2026arXiv260312322L/abstract
+    title: Simulating AGN wind feedback with variable feedback efficiencies in idealised disc galaxies
+
+  - authors: Jinning Liang, F. Jiang, H. J. Mo, et al.
+    year: 2026
+    link_text: ApJ
+    url: https://ui.adsabs.harvard.edu/abs/2025arXiv251213822L/abstract
+    title: "Connection between galaxy morphology and dark-matter halo structure II: predicting disk structure from dark-matter halo properties"
+
+  - authors: F. Jiang (co-first author), Jinning Liang (co-first author) et al.
+    year: 2025
+    link_text: Submitted
+    url: https://ui.adsabs.harvard.edu/abs/2025arXiv250401070J/abstract
+    title: "Formation and Environmental Context of Giant Bulgeless Disk Galaxies in the Early Universe: Insights from Cosmological Simulations"
+
+  - authors: Jinning Liang, F. Jiang, H. J. Mo, et al.
+    year: 2025
+    link_text: MNRAS
+    url: https://ui.adsabs.harvard.edu/abs/2025MNRAS.541.2304L/abstract
+    title: "Connection between galaxy morphology and dark-matter halo structure I: a running threshold for thin discs and size predictors from the dark sector"
+
+  - authors: Jinning Liang, F. Jiang et al.
+    year: 2024
+    link_text: ApJ
+    url: https://ui.adsabs.harvard.edu/abs/2024ApJ...964...53L/abstract
+    title: Constrain the Dark Matter Distribution of NGC5846-UDG1 Using its Globular Cluster Population
+
+  - authors: Jinning Liang, E. Gjergo & X. Fan
+    year: 2023
+    link_text: MNRAS
+    url: https://ui.adsabs.harvard.edu/abs/2023MNRAS.522..863L/abstract
+    title: "Assessing stellar yields in Galaxy chemical evolution: benchmark on observational stellar abundance patterns"
+
+  - authors: H. Liu (co-first author), Jinning Liang (co-first author) & J. Jia
+    year: 2022
+    link_text: CQG
+    url: https://ui.adsabs.harvard.edu/abs/2022CQGra..39s5013L/abstract
+    title: Deflection and Gravitational lensing of null and timelike signals in the Kiselev black hole spacetime in the weak field limit
+
+co_author:
+  - authors: Zou. S, Simcoe. R.A., Petitjean. P, Péroux. C, Champagne. J, Wang. F, Jinning Liang et al.
+    year: 2025
+    link_text: ApJL
+    url: https://ui.adsabs.harvard.edu/abs/2025ApJ...994L..53Z/abstract
+    title: Disturbed cold gas in galaxy and structure formation
+
+  - authors: E. Gjergo, A.G. Sorokin, A. Ruth, E. Spitoni, F. Matteucci, X. Fan, Jinning Liang et al.
+    year: 2023
+    link_text: ApJS
+    url: https://ui.adsabs.harvard.edu/abs/2023ApJS..264...44G/abstract
+    title: GalCEM I - A Publicly-Available Detailed Isotopic Chemical Evolution Code

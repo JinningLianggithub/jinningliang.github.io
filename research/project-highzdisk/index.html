@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: project
 title: High-z Disk Galaxies
 ---
 
-<h1>High-z Disk Galaxies</h1>
 
 <hr>
 
@@ -34,11 +33,10 @@ In the standard theoretical framework of galaxy formation, stable, extended disc
 We search for Giant Bulgeless Disk (GBD) analogs in the <strong>TNG100</strong> cosmological simulation at \(z \leq 3\), selecting galaxies with disc fractions \(f_\mathrm{disc} \geq 0.8\), bulge fractions \(f_\mathrm{bulge} \leq 0.05\), and half-stellar-mass radii exceeding the 84th percentile in their mass range (\(M_\star > 10^{10.5}\,M_\odot\)). Morphological decomposition is performed with our public code <a href="https://github.com/JinningLianggithub/MorphDecom" target="_blank">MorphDecom</a> (Liang et al. 2025), which determines energy and circularity thresholds automatically without arbitrary user choices. We then generate mock JWST NIRCam images using the SKIRT radiative transfer code, from which we measure half-light radii, non-parametric morphologies, and Sérsic profiles — closely replicating the observational strategy used for the Big Wheel. Only <strong>five GBDs</strong> satisfy the criteria at \(z = 3\), accounting for \(\sim 1-2\%\) of all disc-dominated galaxies of similar mass, confirming they are genuine rare outliers.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-highzdisk/fig1.png"
-       alt="Size-mass relation and mock JWST images of simulated GBDs"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Size-mass relation and mock JWST images of simulated GBDs" loading="lazy">
+  <figcaption>
     <strong>Figure 1.</strong> Size–stellar mass relations at \(z \approx 3\) and mock JWST images. The five simulated GBD
     candidates (blue) are shown alongside the observed Big Wheel (orange). Blue stars are intrinsic half-stellar-mass radii;
     blue squares are apparent half-light radii from mock F322W2 images (right), with stellar masses from mock SED fitting.
@@ -55,11 +53,10 @@ Being as massive as \(M_\star \sim 10^{11}\,M_\odot\) at \(z = 3\), these galaxi
 
 
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-highzdisk/fig2.png"
-       alt="Large-scale environment and mock images of GBDs"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Large-scale environment and mock images of GBDs" loading="lazy">
+  <figcaption>
     <strong>Figure 2.</strong> Large-scale environment and synthetic images of the five simulated GBDs at \(z = 3\).
     Top and bottom rows show edge-on and face-on views at finer spatial sampling than JWST, revealing detailed structure
     including the compact inner mini-discs. The lower-left insets show the angular-momentum alignment between the disc,
@@ -86,11 +83,10 @@ Being as massive as \(M_\star \sim 10^{11}\,M_\odot\) at \(z = 3\), these galaxi
 Their dark-matter halos also stand apart. GBD hosts exhibit <strong>higher spin</strong> (\(\sim 0.2\) dex above non-GBDs), <strong>lower halo concentration</strong> and shallower central dark-matter densities (with Einasto shape index \(\alpha\) about 0.2 dex higher), and <strong>more spherical shapes</strong> (axis ratio \(q \gtrsim 0.8\)). Together these indicate a shallower central gravitational potential and a more quiescent assembly history — the increased sphericity is inconsistent with recent major accretion events, which typically distort halo shapes.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-highzdisk/fig4.png"
-       alt="DM halo properties of GBDs vs non-GBDs"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="DM halo properties of GBDs vs non-GBDs" loading="lazy">
+  <figcaption>
     <strong>Figure 4.</strong> Cumulative distributions of the DM halo structural properties of GBDs (solid) and non-GBDs
     (dashed) at \(z = 1, 2, 3\). From left to right: spin \(\lambda\); Einasto shape index \(\alpha\) and concentration
     \(c\) (with inset showing mean density profiles); and 3D axis ratio \(q\). GBD halos have higher spin, lower
@@ -102,11 +98,10 @@ Their dark-matter halos also stand apart. GBD hosts exhibit <strong>higher spin<
 The assembly histories of GBDs reinforce this picture. Their progenitors accreted satellite galaxies notably richer in cold gas, with orbital angular momenta significantly better aligned with the primary spin vector (\(\hat{j}_p \cdot \hat{j}_{s,\mathrm{orbit}} \approx 0.75\) versus \(\approx 0.55\) for non-GBDs at \(z = 2\)). This means infalling material is deposited in the correct rotational sense, building the disc rather than disrupting it. The circumgalactic medium (CGM) tells the same story: GBD hosts maintain a remarkably coherent CGM, with a median disc-CGM alignment cosine of \(\sim 0.9\) compared to \(\sim 0.5\) for non-GBDs. Hot-mode accretion in these massive halos suppresses the penetration of misaligned cold filaments, so that gas cooling from the aligned CGM contributes coherently to disc growth. By examining where each factor falls in the joint space of disc size and disc fraction, we find that <strong>coherent CGM and kinematically aligned mergers</strong> produce the clearest combined trends, making them the most important drivers of GBD formation.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-highzdisk/fig3.png"
-       alt="Cumulative distributions of environmental and merger properties"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Cumulative distributions of environmental and merger properties" loading="lazy">
+  <figcaption>
     <strong>Figure 3.</strong> Cumulative distributions of environmental and assembly-history properties for GBDs (solid)
     and non-GBDs (dashed) at \(z = 1, 2, 3\) (blue, green, red). From top to bottom: local halo number density within
     3 Mpc; average cold gas fraction of merging satellites; average cosine between the galaxy and orbital angular momentum
@@ -116,7 +111,7 @@ The assembly histories of GBDs reinforce this picture. Their progenitors accrete
   </figcaption>
 </figure>
 
-<h3>Mini Diskcs</h3>
+<h3>Mini Disks</h3>
 
 <p>
 Every GBD at \(z = 3\) harbours a <strong>compact, rotationally supported inner disc</strong> (\(v_\mathrm{rot}/\sigma \sim 2-3\)) embedded within the large outer disc. In high-resolution mock images this inner structure is distinct and disc-like, but when convolved with the JWST PSF it mimics a small bulge. Two-component Sérsic fitting of the mock images consistently yields inner Sérsic indices of \(n \sim 0.6-1\) with sub-kiloparsec effective radii — remarkably consistent with the observed Big Wheel, which shows an inner \(n \sim 0.7\). This universality suggests that compact inner discs may be a common but largely hidden feature of high-redshift giant disc galaxies.
@@ -128,11 +123,10 @@ Every GBD at \(z = 3\) harbours a <strong>compact, rotationally supported inner 
 The GBD phase cannot last long. Tracing the evolutionary tracks of all five systems, the galaxies remain disc-dominated until a subsequent destructive major merger occurs. Over \(\sim 1-2\) Gyr, disc instabilities develop, sizes converge toward the median relation, and star formation rates drop \(\sim 1\) dex below the main sequence. A final gas-rich major merger then simultaneously rejuvenates star formation and converts the morphology to an ellipsoidal shape. By \(z = 0\), the GBD descendants are massive early-type galaxies — often the brightest central galaxies of their clusters — confirming that early giant bulgeless discs are a fundamentally distinct population from nearby pure-disc galaxies of similar mass, and not their progenitors.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-highzdisk/fig5.png"
-       alt="Evolution of simulated GBDs"
-       style="max-width: 90%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Evolution of simulated GBDs" class="fig-90" loading="lazy">
+  <figcaption>
     <strong>Figure 5.</strong> Evolution of the five simulated GBDs identified at \(z = 3\). Panels show disc fraction
     \(f_\mathrm{Disc}\), excess half-stellar-mass size relative to the median size-mass relation, SFR excess relative to
     the star-forming main sequence, and disc-CGM angular-momentum alignment. The GBDs remain disc-dominated until the
@@ -143,5 +137,3 @@ The GBD phase cannot last long. Tracing the evolutionary tracks of all five syst
 </figure>
 
 <hr>
-
-<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">

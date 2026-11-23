@@ -1,0 +1,37 @@
+---
+layout: default
+---
+{% assign projects = site.data.research %}
+{% for p in projects %}{% if p.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+<article class="article">
+    <div class="container">
+        <header class="article__head">
+            <nav class="crumb" aria-label="Breadcrumb"><a href="{{ '/research/' | relative_url }}">Research</a></nav>
+            <h1>{{ page.title }}</h1>
+        </header>
+        <div class="prose">
+            {{ content }}
+        </div>
+
+        {% if idx != nil %}
+        {% assign prev_i = idx | minus: 1 %}
+        {% assign next_i = idx | plus: 1 %}
+        <nav class="pager" aria-label="More research">
+            {% if prev_i >= 0 %}
+            {% assign prev = projects[prev_i] %}
+            <a class="pager__link" href="{{ prev.url | relative_url }}" rel="prev">
+                <span class="pager__label">Previous project</span>
+                <span class="pager__title">{{ prev.title }}</span>
+            </a>
+            {% else %}<span></span>{% endif %}
+            {% if next_i < projects.size %}
+            {% assign next = projects[next_i] %}
+            <a class="pager__link pager__link--next" href="{{ next.url | relative_url }}" rel="next">
+                <span class="pager__label">Next project</span>
+                <span class="pager__title">{{ next.title }}</span>
+            </a>
+            {% endif %}
+        </nav>
+        {% endif %}
+    </div>
+</article>

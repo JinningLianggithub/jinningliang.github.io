@@ -1,0 +1,9 @@
+{% assign paper = include.paper %}
+<li class="paper">
+    <span class="paper__year num">{{ paper.year }}</span>
+    <div class="paper__body">
+        <p class="paper__title"><a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a></p>
+        <p class="paper__authors">{{ paper.authors | replace: "Jinning Liang", "<strong>Jinning Liang</strong>" }}</p>
+    </div>
+    <span class="paper__venue">{{ paper.link_text }}</span>
+</li>

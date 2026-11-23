@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: project
 title: Simulating AGN Feedback
 ---
 
-<h1>Simulating AGN Feedback</h1>
 
 <hr>
 
@@ -37,11 +36,9 @@ Observations of ultra-fast outflows (UFOs) and semi-analytical models of UV line
 We implement a new thermal AGN feedback model in the <strong>SWIFT</strong> hydrodynamic code with the <strong>COLIBRE</strong> galaxy formation subgrid physics. In this model, the AGN energy injection coupling efficiency \(\eta\) follows a power-law dependence on the Eddington-normalised accretion rate \(\dot{m}\):
 </p>
 
-<span style="font-family: serif;">
 \[
 \eta = \min\!\left(N_\eta \, \dot{m}^{\,\alpha_\eta},\; 1\right)
 \]
-</span>
 
 <p>
 where \(N_\eta\) is the normalisation and \(\alpha_\eta\) is the slope — both free parameters. The fiducial model adopts \(\alpha_\eta = 2.6\), motivated by the Qwind predictions for UV line-driven winds, with the normalisation set to reproduce \(\eta = 0.1\) at \(\dot{m} = 0.1\), consistent with observational constraints on UFOs. We also explore variations: fixing the slope and varying \(N_\eta = 10,\, 300,\, 3000\), or fixing the normalisation while varying \(\alpha_\eta = 0.5,\, 1.5,\, 3.0\).
@@ -51,11 +48,10 @@ where \(N_\eta\) is the normalisation and \(\alpha_\eta\) is the slope — both 
 The figure below shows how \(\eta\) varies with \(\dot{m}\) for all model variants. At low Eddington ratios (which dominate our simulations), the variable coupling efficiency is substantially lower than the fiducial constant value of \(\eta = 0.05\). This key difference has important consequences for BH self-regulation.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-AGN/fig2.jpg"
-       alt="Coupling efficiency η as a function of Eddington ratio"
-       style="max-width: 65%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Coupling efficiency η as a function of Eddington ratio" class="fig-65" loading="lazy">
+  <figcaption>
     <strong>Figure 2.</strong> The coupling efficiency \(\eta\) as a function of Eddington ratio \(\dot{m}\) for all
     variable coupling efficiency models tested in this work. Upper panel shows variations in slope \(\alpha_\eta\);
     lower panel shows variations in normalisation \(N_\eta\). The fiducial variable model (\(N_\eta = 39.81\),
@@ -73,11 +69,10 @@ We simulate idealised Milky Way-mass disc galaxies using the SWIFT code with COL
 The three panels below provide a visual overview of the AGN feedback impact at two key epochs. Face-on cold gas maps (top row) reveal that constant-efficiency feedback excavates a large central cavity, while the variable model retains more cold gas. Edge-on temperature maps (middle row) show that AGN runs produce large hot bubbles in the polar directions absent in the SN-only case. Radial velocity maps (bottom row) confirm that AGN feedback drives substantially faster and more extended outflows.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-AGN/fig3.jpg"
-       alt="Cold gas surface density, temperature, and radial velocity maps"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="Cold gas surface density, temperature, and radial velocity maps" loading="lazy">
+  <figcaption>
     <strong>Figure 3.</strong> Visualisations of three runs at two times: the SN-only run (left), the
     \(M_{\rm BH} = 10^8\,M_\odot\) fiducial constant coupling efficiency run (middle), and the fiducial variable
     coupling efficiency run (right). <em>Top row</em>: face-on cold gas (\(T \leq 8000\) K) surface density maps
@@ -96,11 +91,10 @@ The three panels below provide a visual overview of the AGN feedback impact at t
 A central finding of this work is that the variable coupling efficiency model produces stronger and more sustained BH self-regulation. In the constant coupling efficiency model (\(\eta = 0.05\)), strong early feedback rapidly depletes the central gas supply, causing the Eddington ratio to drop by 2–3 orders of magnitude. In the variable model, the lower coupling efficiency at low \(\dot{m}\) allows more gas to fall back toward the BH, maintaining higher accretion rates at late times. This self-regulation leads to faster BH mass growth, by up to a factor of a few compared to the constant model — a potentially important channel for producing overmassive black holes at high redshifts, as now being observed by JWST.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-AGN/fig6.jpg"
-       alt="BH accretion rate and mass growth for different BH masses"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="BH accretion rate and mass growth for different BH masses" loading="lazy">
+  <figcaption>
     <strong>Figure 6.</strong> Eddington-normalised accretion rate \(\dot{m}\) (top row) and BH mass growth
     \(M_{\rm BH}/M_{\rm BH,0}\) (bottom row) as a function of time for the fiducial constant efficiency model
     (left column) and fiducial variable efficiency model (right column), for all BH masses. For the same BH mass,
@@ -115,11 +109,10 @@ A central finding of this work is that the variable coupling efficiency model pr
 Despite the differences in BH accretion rates and coupling efficiencies, the evolution of global galaxy properties — star formation rate (SFR), cold gas disc mass, and stellar mass — is remarkably similar between the fiducial constant and variable efficiency models for the same BH mass. This reflects the self-regulating nature of AGN feedback: when the coupling efficiency decreases, the accretion rate adjusts upward to compensate, ultimately injecting a similar total amount of energy into the galaxy. The BH mass is the primary driver of galaxy-scale feedback effects, not the choice of efficiency model.
 </p>
 
-<figure style="text-align:center; margin: 2em 0;">
+<figure>
   <img src="/assets/images/project-AGN/fig8.jpg"
-       alt="SFR, cold gas disc mass, and stellar mass evolution"
-       style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;">
-  <figcaption style="margin-top: 0.7em; font-size: 0.9em; color: #555;">
+       alt="SFR, cold gas disc mass, and stellar mass evolution" loading="lazy">
+  <figcaption>
     <strong>Figure 8.</strong> Evolution of the galaxy SFR (top), cold gas disc mass (middle), and stellar mass
     growth (bottom) for the fiducial constant (dashed, left column) and fiducial variable (solid, right column)
     coupling efficiency models, for all BH masses. For a given BH mass, the two models produce very similar
@@ -146,5 +139,3 @@ This work demonstrates that a physically motivated, variable AGN coupling effici
 </p>
 
 <hr>
-
-<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">

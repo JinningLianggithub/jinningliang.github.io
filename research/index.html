@@ -1,58 +1,24 @@
 ---
 layout: default
 title: Research
+math: false
 ---
 
-
-
-<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
-<style>
-    .content {
-    max-width: none !important;
-    width: 100%;
-    }
-</style>
-<div class="research-page">
-    <div class="research-grid">
-    <a href="/research/project-AGN/" class="research-block">
-        <img src="/assets/images/project-AGN.png" alt="Project A">
-        <div class="research-block-content">
-            <h3 class="research-block-title">Simulating AGN Feedback</h3>
-        </div>
-    </a>
-
-    <a href="/research/project-galhalo/" class="research-block">
-        <img src="/assets/images/project-galhalo.png" alt="Project B">
-        <div class="research-block-content">
-            <h3 class="research-block-title">Galaxy-Halo Connection</h3>
-        </div>
-    </a>
-
-    <a href="/research/project-highzdisk/" class="research-block">
-        <img src="/assets/images/project-highzdisk.png" alt="Project C">
-        <div class="research-block-content">
-            <h3 class="research-block-title">High-z Disk Galaxies</h3>
-        </div>
-    </a>
-
-    <a href="/research/project-UDG/" class="research-block">
-        <img src="/assets/images/project-UDG.png" alt="Project D">
-        <div class="research-block-content">
-            <h3 class="research-block-title">Dwarf Galaxies and Dark Matter</h3>
-        </div>
-    </a>
-
-    <a href="/research/project-GCE/" class="research-block">
-        <img src="/assets/images/project-GCE.png" alt="Project E">
-        <div class="research-block-content">
-            <h3 class="research-block-title">Galactic Chemical Evolution</h3>
-        </div>
-    </a>
-
-    <a href="/research/project-GL/" class="research-block">
-        <img src="/assets/images/project-GL.png" alt="Project F">
-        <div class="research-block-content">
-            <h3 class="research-block-title">Gravitational Lensing Computation</h3>
-        </div>
-    </a>
-</div>
+<section class="page">
+    <div class="container">
+        <header class="page-head">
+            <h1>Research</h1>
+        </header>
+        <ul class="project-grid project-grid--wide">
+            {% for p in site.data.research %}
+            <li>
+                <a class="project" href="{{ p.url | relative_url }}">
+                    <span class="project__figure"><img src="{{ p.image | relative_url }}" alt=""{% unless forloop.first %} loading="lazy"{% endunless %}></span>
+                    <span class="project__title">{{ p.title }}</span>
+                    <span class="project__meta"><span>{{ p.venue }}</span> <span class="num">{{ p.year }}</span></span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

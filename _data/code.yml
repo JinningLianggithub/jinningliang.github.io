@@ -1,0 +1,13 @@
+# Code repositories, shown on the Code page and on the home page.
+
+- name: GCevo
+  url: https://github.com/JiangFangzhou/GCevo
+  description: Semi-analytical model for evolving globular clusters within static galactic potential
+
+- name: MorphDecom
+  url: https://github.com/JinningLianggithub/MorphDecom
+  description: Morphological decomposition algorithm that separate simulated galaxies into bulges, stellar halos, thin disks and thick disks
+
+- name: Gal-halo_Symbolic-regression
+  url: https://github.com/JinningLianggithub/Gal-halo_Symbolic-regression
+  description: Pipeline for uncovering galaxy-halo connection using random forest, SHAP, and symbolic regression
